@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
-public class Main extends Application {
+public class Mininet extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("View/MainView.fxml"));
