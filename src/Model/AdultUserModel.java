@@ -6,18 +6,28 @@ package Model;
 
 import Constant.ApplicationConstant;
 
-public class AdultUserModel extends UserModel {
+import Interface.iNotYoungChild;
+
+import java.util.Set;
+
+public class AdultUserModel extends UserModel implements iNotYoungChild {
     public AdultUserModel(String userName, int age, String status, String photo, char gender, String state) {
         super(userName, age, status,photo,gender,state);
     }
 
-    public void addConnection(UserModel user, String connectionType) {
-        if (user.getAge() > 16) {
-            this.getConnections().add(new ConnectionModel(user.getUserName(), connectionType));
-            user.getConnections().add(new ConnectionModel(this.getUserName(), connectionType));
-        } else if (user.getAge() < 16) {
-            System.out.println("Cannot add dependent as connection!");
-        }
+    public void addColleague(UserModel userModel){
+        if (userModel.getAge() > 16)
+            this.addConnection(userModel, ApplicationConstant.COLLEAGUE);
+    }
+
+    public void addClassMate(UserModel userModel){
+        if (userModel.getAge() > 16)
+        this.addConnection(userModel, ApplicationConstant.CLASSMATE);
+    }
+
+    public void addFriend(UserModel userModel){
+        if (userModel.getAge() > 16)
+        this.addConnection(userModel, ApplicationConstant.FRIEND);
     }
 
 }

@@ -10,5 +10,5 @@ public class ApplicationConstant {
     public static String CLASSMATE = "classmate";
     public static String COLLEAGUE = "colleague";
     public static String SPOUSE = "spouse";
-    public static String SIBLINGS = "sibling";
+    public static String SIBLING = "sibling";
 }

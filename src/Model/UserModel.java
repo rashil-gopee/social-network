@@ -7,6 +7,8 @@ package Model;
 import Constant.ApplicationConstant;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class UserModel {
     private String userName;
@@ -17,9 +19,7 @@ public abstract class UserModel {
     private char gender;
     private String state;
 
-    private ArrayList<ConnectionModel> connections;
-
-    public UserModel(){}
+    private Set<ConnectionModel> connections;
 
     public UserModel(String userName, int age, String status, String photo, char gender, String state){
         this.userName = userName;
@@ -28,7 +28,7 @@ public abstract class UserModel {
         this.photo = photo;
         this.gender = gender;
         this.state = state;
-        connections = new ArrayList<>();
+        connections = new HashSet<ConnectionModel>();
     }
 
     public String getUserName() {
@@ -55,11 +55,11 @@ public abstract class UserModel {
         this.status = status;
     }
 
-    public ArrayList<ConnectionModel> getConnections() {
+    public Set<ConnectionModel> getConnections() {
         return connections;
     }
 
-    public void setConnections(ArrayList<ConnectionModel> connections) {
+    public void setConnections(Set<ConnectionModel> connections) {
         this.connections = connections;
     }
 
@@ -96,17 +96,18 @@ public abstract class UserModel {
     }
 
     public void removeConnection(String connectionName){
-        for (int i = 0; i < this.connections.size(); i++){
-            if (this.connections.get(i).getConnectionName().equals(connectionName)){
-                connections.remove(this.connections.get(i));
-                break;
-            }
-            else if (i == (this.connections.size() - 1)){
-                System.out.println("Error! " + userName + " is not a connection!");
+        for (ConnectionModel connection : this.getConnections()){
+            if (connection.getConnectionName().equals(connectionName))
+            {
+                connections.remove(connection);
+                return;
             }
         }
     }
 
-    public abstract void addConnection(UserModel user, String relationType);
+    public void addConnection(UserModel user, String connectionType) {
+        this.getConnections().add(new ConnectionModel(user.getUserName(), connectionType));
+        user.getConnections().add(new ConnectionModel(this.getUserName(), connectionType));
+    }
 
 }
