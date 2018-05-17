@@ -8,7 +8,6 @@ import Constant.ApplicationConstant;
 
 import Interface.iNotYoungChild;
 
-import java.util.Set;
 
 public class AdultUserModel extends UserModel implements iNotYoungChild {
     public AdultUserModel(String userName, int age, String status, String photo, char gender, String state) {
@@ -28,6 +27,19 @@ public class AdultUserModel extends UserModel implements iNotYoungChild {
     public void addFriend(UserModel userModel){
         if (userModel.getAge() > 16)
         this.addConnection(userModel, ApplicationConstant.FRIEND);
+    }
+
+    public void addSpouse(UserModel userModel){
+        if (userModel.getAge() > 16)
+            this.addConnection(userModel, ApplicationConstant.SPOUSE);
+    }
+
+    public Boolean verifySpouseName (String spouseName){
+        for (ConnectionModel connectionModel : this.getConnections()){
+            if (connectionModel.getConnectionName().equals(spouseName))
+                return true;
+        }
+        return false;
     }
 
 }

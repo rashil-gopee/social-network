@@ -14,14 +14,16 @@ public class ChildUserModel extends UserModel implements iNotYoungChild {
     }
 
     public void addClassMate(UserModel userModel){
-        if (userModel.getAge() <= 16)
+        if (userModel.getAge() <= 16) {
             this.addConnection(userModel, ApplicationConstant.CLASSMATE);
+        }
     }
 
     public void addFriend(UserModel userModel){
-        if (userModel.getAge() <= 16)
-            this.addConnection(userModel, ApplicationConstant.FRIEND);
+        if (userModel.getAge() <= 16) {
+            if (((this.getAge() > userModel.getAge()) && (this.getAge() - userModel.getAge() <= 3)) || ((userModel.getAge() > this.getAge()) && (userModel.getAge() - this.getAge() <= 3))) {
+                this.addConnection(userModel, ApplicationConstant.FRIEND);
+            }
+        }
     }
-
-
 }
