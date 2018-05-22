@@ -2,10 +2,12 @@ package Controller;
 
 import Constant.ApplicationConstant;
 import Model.*;
+import javafx.scene.control.Alert;
 
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
 
@@ -13,8 +15,8 @@ public class UserController {
 
     public static Set<UserModel> USERS = new HashSet<>();
 
-    public void init(){
-            File peopleFile = new File("people.txt");
+    public Boolean init() {
+        File peopleFile = new File("people.txt");
         File dbFile = new File("mininet.db");
 
         if (peopleFile.exists() && !dbFile.exists()) {
@@ -22,6 +24,56 @@ public class UserController {
             loadRelations();
             createDb();
             saveUsersToDb();
+            return true;
+        }
+        else if (dbFile.exists()) {
+            loadUsersFromDb();
+            loadRelations();
+            return true;
+        }
+        return false;
+    }
+
+    public void loadUsersFromDb() {
+        Connection connection = null;
+        Statement statement = null;
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
+
+            statement = connection.createStatement();
+            String sql = "SELECT * FROM people;";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()){
+                String name = resultSet.getString("name");
+                String photo = resultSet.getString("photo");
+                String status = resultSet.getString("status");
+                char gender = resultSet.getString("gender").charAt(0);
+                int age = resultSet.getInt("age");
+                String state = resultSet.getString("state");
+
+                UserModel userModel;
+                if (age >= 16) {
+                    userModel = new AdultUserModel(name, age, status, photo, gender, state);
+                    USERS.add(userModel);
+                } else {
+                    Set<String> parents = new HashSet<>();
+                    parents = getParents(name);
+                    if (parents.size() == 2 && isCouple(parents)) {
+                        if (age > 2) {
+                            userModel = new ChildUserModel(name, age, status, photo, gender, state, parents);
+                        } else {
+                            userModel = new YoungChildUserModel(name, age, status, photo, gender, state, parents);
+                        }
+                        USERS.add(userModel);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
         }
     }
 
@@ -36,9 +88,9 @@ public class UserController {
                 StringTokenizer st = new StringTokenizer(line, ",");
                 String name = st.nextToken().trim();
                 System.out.println("name: " + name);
-                String photo = st.nextToken().trim();
+                String photo = st.nextToken().trim().replaceAll("^\"|\"$", "");
                 System.out.println("photo: " + photo);
-                String status = st.nextToken().trim();
+                String status = st.nextToken().trim().replaceAll("^\"|\"$", "");
                 System.out.println("status: " + status);
                 char gender = st.nextToken().trim().charAt(0);
                 System.out.println("gender: " + gender);
@@ -200,21 +252,21 @@ public class UserController {
     }
 
     public void createDb() {
-            Connection connection = null;
-            Statement statement = null;
+        Connection connection = null;
+        Statement statement = null;
 
-            try {
-                Class.forName("org.sqlite.JDBC");
-                connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
+        try {
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
 
-                statement = connection.createStatement();
-                String createPeopleTblSql = "CREATE TABLE people " +
-                        "(name TEXT PRIMARY KEY NOT NULL, " +
-                        "photo TEXT, " +
-                        "status TEXT, " +
-                        "gender TEXT NOT NULL , " +
-                        "age INT NOT NULL , " +
-                        "state TEXT NOT NULL);";
+            statement = connection.createStatement();
+            String createPeopleTblSql = "CREATE TABLE people " +
+                    "(name TEXT PRIMARY KEY NOT NULL, " +
+                    "photo TEXT, " +
+                    "status TEXT, " +
+                    "gender TEXT NOT NULL , " +
+                    "age INT NOT NULL , " +
+                    "state TEXT NOT NULL);";
 
 //                String createRelationsTblSql = "CREATE TABLE people " +
 //                        "(name PRIMARY KEY VARCHAR(50) NOT NULL, " +
@@ -225,16 +277,16 @@ public class UserController {
 //                        "age INTEGER NOT NULL , " +
 //                        "state VARCHAR(3) NOT NULL;";
 
-                statement.executeUpdate(createPeopleTblSql);
-                //statement.executeUpdate(createRelationsTblSql);
+            statement.executeUpdate(createPeopleTblSql);
+            //statement.executeUpdate(createRelationsTblSql);
 
-                statement.close();
-                connection.close();
-            } catch (Exception e) {
-                System.err.println(e.getClass().getName() + ": " + e.getMessage());
-                System.exit(0);
-            }
-            System.out.println("Opened database successfully");
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Opened database successfully");
 
     }
 
@@ -263,13 +315,15 @@ public class UserController {
                 connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
 
                 statement = connection.createStatement();
-                String sql = "INSERT INTO people" +
-                        "VALUES  ('" + userModel.getUserName() + "','" +
+                String sql = "INSERT INTO people " +
+                        "VALUES ('" + userModel.getUserName() + "','" +
                         userModel.getPhoto() + "','" +
                         userModel.getStatus() + "','" +
                         userModel.getGender() + "'," +
                         userModel.getAge() + ",'" +
-                        userModel.getState() + "') ";
+                        userModel.getState() + "');";
+
+                System.out.println(sql);
 
                 statement.executeUpdate(sql);
                 statement.close();
@@ -283,12 +337,12 @@ public class UserController {
     }
 
     public void updateUserProfileToDb(String originalUsername, UserModel userModel) {
-        if (!originalUsername.equals(userModel.getUserName())){
-            for (ConnectionModel connectionModel: userModel.getConnections()){
-                for (UserModel relative: USERS){
-                    if (relative.getUserName().equals(connectionModel.getConnectionName())){
-                        for (ConnectionModel relativeConnection: relative.getConnections()){
-                            if (relativeConnection.getConnectionName().equals(originalUsername)){
+        if (!originalUsername.equals(userModel.getUserName())) {
+            for (ConnectionModel connectionModel : userModel.getConnections()) {
+                for (UserModel relative : USERS) {
+                    if (relative.getUserName().equals(connectionModel.getConnectionName())) {
+                        for (ConnectionModel relativeConnection : relative.getConnections()) {
+                            if (relativeConnection.getConnectionName().equals(originalUsername)) {
                                 relativeConnection.setConnectionName(userModel.getUserName());
                             }
                         }
@@ -297,16 +351,36 @@ public class UserController {
             }
         }
 
+        Connection connection = null;
+        Statement statement = null;
 
+        try {
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
+
+            statement = connection.createStatement();
+            String sql = "UPDATE people SET name = '" + userModel.getUserName() +"'," +
+                    "photo = '" + userModel.getPhoto() +"'," +
+                    "status = '" + userModel.getPhoto() +"'," +
+                    "gender = '" + userModel.getGender() +"'," +
+                    "age = '" + userModel.getAge() +"'," +
+                    "state = '" + userModel.getState() +"'" +
+                    "WHERE name='" + originalUsername +"';";
+            statement.executeUpdate(sql);
+            connection.commit();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
 
     }
 
-    public ArrayList<String> getShorterstRelationPathway(UserModel userModel, String targetName){
+    public ArrayList<String> getShorterstRelationPathway(UserModel userModel, String targetName) {
         ArrayList<String> relationPathway = new ArrayList<>();
 
         ArrayList<String> traversedPeople = new ArrayList<>();
 
-        for (ConnectionModel connectionModel: userModel.getConnections()){
+        for (ConnectionModel connectionModel : userModel.getConnections()) {
 
         }
 
