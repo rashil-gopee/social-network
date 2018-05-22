@@ -1,6 +1,5 @@
 import Constant.ApplicationConstant;
 import Model.*;
-import javafx.scene.control.Alert;
 
 import java.io.File;
 import java.sql.Connection;
@@ -32,7 +31,7 @@ public class Driver {
         return false;
     }
 
-    public void loadUsersFromDb() {
+    private void loadUsersFromDb() {
         Connection connection = null;
         Statement statement = null;
 
@@ -53,19 +52,20 @@ public class Driver {
                 String state = resultSet.getString("state");
 
                 UserModel userModel;
-                if (age >= 16) {
+                if (age >= 16 && age <= 150) {
                     userModel = new AdultUserModel(name, age, status, photo, gender, state);
                     USERS.add(userModel);
                 } else {
                     Set<String> parents = new HashSet<>();
-                    parents = getParents(name);
-                    if (parents.size() == 2 && isCouple(parents)) {
+                    parents = getParentsFromFile(name);
+                    if (parents.size() == 2 && verifyCoupleFromFile(parents)) {
                         if (age > 2) {
                             userModel = new ChildUserModel(name, age, status, photo, gender, state, parents);
-                        } else {
+                            USERS.add(userModel);
+                        } else if (age>=0 && age < 2) {
                             userModel = new YoungChildUserModel(name, age, status, photo, gender, state, parents);
+                            USERS.add(userModel);
                         }
-                        USERS.add(userModel);
                     }
                 }
             }
@@ -75,7 +75,7 @@ public class Driver {
         }
     }
 
-    public void loadUsersFromFile() {
+    private void loadUsersFromFile() {
         Scanner input = null;
         try {
             File file = new File("people.txt");
@@ -103,8 +103,8 @@ public class Driver {
                     USERS.add(userModel);
                 } else {
                     Set<String> parents = new HashSet<>();
-                    parents = getParents(name);
-                    if (parents.size() == 2 && isCouple(parents)) {
+                    parents = getParentsFromFile(name);
+                    if (parents.size() == 2 && verifyCoupleFromFile(parents)) {
                         if (age > 2) {
                             userModel = new ChildUserModel(name, age, status, photo, gender, state, parents);
                         } else {
@@ -127,7 +127,7 @@ public class Driver {
         }
     }
 
-    public Set<String> getParents(String childName) {
+    private Set<String> getParentsFromFile(String childName) {
         Scanner input = null;
         Set<String> parents = new HashSet<>();
         try {
@@ -164,7 +164,7 @@ public class Driver {
         return parents;
     }
 
-    public Boolean isCouple(Set<String> names) {
+    private Boolean verifyCoupleFromFile(Set<String> names) {
         ArrayList<String> usernames = new ArrayList<>(names);
         java.util.Collections.sort(usernames);
 
@@ -198,7 +198,7 @@ public class Driver {
         return false;
     }
 
-    public void loadRelations() {
+    private void loadRelations() {
         Scanner input = null;
         try {
             File file = new File("relations.txt");
@@ -224,8 +224,8 @@ public class Driver {
                     if (type.equals(ApplicationConstant.FRIEND) || type.equals(ApplicationConstant.CLASSMATE) || type.equals(ApplicationConstant.COLLEAGUE) || type.equals(ApplicationConstant.SPOUSE))
                         userModel.getConnections().add(new ConnectionModel(relativeName, type));
                     else if (type.equals(ApplicationConstant.SIBLING)) {
-                        Set<String> parents = getParents(relativeName);
-                        if (parents.size() == 2 && isCouple(parents))
+                        Set<String> parents = getParentsFromFile(relativeName);
+                        if (parents.size() == 2 && verifyCoupleFromFile(parents))
                             userModel.getConnections().add(new ConnectionModel(relativeName, ApplicationConstant.SIBLING));
                     } else if (type.equals(ApplicationConstant.PARENT)) {
                         if (userModel instanceof AdultUserModel)
@@ -249,7 +249,7 @@ public class Driver {
         }
     }
 
-    public void createDb() {
+    private void createDb() {
         Connection connection = null;
         Statement statement = null;
 

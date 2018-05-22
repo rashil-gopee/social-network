@@ -3,6 +3,6 @@ package Interface;
 import Model.UserModel;
 
 public interface iNotYoungChild {
-    void addClassMate(UserModel userModel);
-    void addFriend(UserModel userModel);
+    void addClassMate(UserModel userModel) throws Exception;
+    void addFriend(UserModel userModel) throws Exception;
 }

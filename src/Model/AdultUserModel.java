@@ -7,39 +7,50 @@ package Model;
 import Constant.ApplicationConstant;
 
 import Interface.iNotYoungChild;
-
+import Exception.NotToBeFriendsException;
+import Exception.NotToBeClassmatesException;
+import Exception.NotTobeCoupledException;
+import Exception.NotToBeColleaguesException;
 
 public class AdultUserModel extends UserModel implements iNotYoungChild {
-    public AdultUserModel(String userName, int age, String status, String photo, char gender, String state) {
+    public AdultUserModel(String userName, int age, String status, String photo, char gender, String state) throws Exception{
         super(userName, age, status,photo,gender,state);
     }
 
-    public void addColleague(UserModel userModel){
+    public void addColleague(UserModel userModel) throws Exception{
         if (userModel.getAge() > 16) {
             this.addConnection(userModel, ApplicationConstant.COLLEAGUE);
             userModel.addConnection(this, ApplicationConstant.COLLEAGUE);
         }
+        else
+            throw new NotToBeColleaguesException("Adult cannot has child as colleague.");
     }
 
-    public void addClassMate(UserModel userModel){
+    public void addClassMate(UserModel userModel) throws Exception{
         if (userModel.getAge() > 16) {
             this.addConnection(userModel, ApplicationConstant.CLASSMATE);
             userModel.addConnection(this, ApplicationConstant.CLASSMATE);
         }
+        else
+            throw new NotToBeClassmatesException("Adult cannot be classmate with a child.");
     }
 
-    public void addFriend(UserModel userModel){
+    public void addFriend(UserModel userModel) throws Exception{
         if (userModel.getAge() > 16) {
             this.addConnection(userModel, ApplicationConstant.FRIEND);
             userModel.addConnection(this, ApplicationConstant.FRIEND);
         }
+        else
+            throw new NotToBeFriendsException("Adult cannot be friend with a child.");
     }
 
-    public void addSpouse(UserModel userModel){
+    public void addSpouse(UserModel userModel) throws Exception{
         if (userModel.getAge() > 16) {
             this.addConnection(userModel, ApplicationConstant.SPOUSE);
             userModel.addConnection(this, ApplicationConstant.SPOUSE);
         }
+        else
+            throw new NotTobeCoupledException("Adult cannot have a child as spouse.");
     }
 
     public void addChild(UserModel userModel){
@@ -48,7 +59,7 @@ public class AdultUserModel extends UserModel implements iNotYoungChild {
         }
     }
 
-    public Boolean verifySpouseName (String spouseName){
+    public Boolean verifySpouseName(String spouseName){
         for (ConnectionModel connectionModel : this.getConnections()){
             if (connectionModel.getConnectionName().equals(spouseName))
                 return true;

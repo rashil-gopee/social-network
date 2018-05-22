@@ -1,15 +1,23 @@
 package View;
 
+import Model.AdultUserModel;
+import Model.ChildUserModel;
+import Model.UserModel;
+import Model.YoungChildUserModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class AddPersonController {
@@ -40,6 +48,28 @@ public class AddPersonController {
     @FXML
     public void savePerson(ActionEvent event) throws Exception {
         System.out.println("Button clicked!");
+        Set<String> parents = new HashSet<>();
+
+        if (txt_name.getText().length() == 0 || txt_state.getText().length() == 0 || txt_status.getText().length() == 0 || txt_age.getText().length() == 0 || genderToggle.getSelectedToggle() == null){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Missing Information!");
+            alert.setHeaderText("");
+            alert.setContentText("Please fill all inputs!");
+            alert.showAndWait();
+            return;
+        }
+
+        try{
+            Integer.valueOf(txt_age.getText());
+        }
+        catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Invalid Information!");
+            alert.setHeaderText("");
+            alert.setContentText("Age must be a number");
+            alert.showAndWait();
+            return;
+        }
 
         String name = txt_name.getText();
         String photo = txt_photo.getText();
@@ -47,10 +77,30 @@ public class AddPersonController {
         char gender = (char) 0;
         if (genderToggle.getSelectedToggle() == radio_male)
             gender = 'M';
-        else if (genderToggle.getSelectedToggle() == radio_male)
+        else if (genderToggle.getSelectedToggle() == radio_female)
             gender = 'F';
         String state = txt_state.getText();
         int age = Integer.valueOf(txt_age.getText());
+
+        UserModel userModel;
+
+        try {
+            if (age >= 16)
+                userModel = new AdultUserModel(name, age, status, photo, gender, state);
+            else if (age > 2)
+                userModel = new ChildUserModel(name, age, status, photo, gender, state, parents);
+            else
+                userModel = new YoungChildUserModel(name, age, status, photo, gender, state, parents);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error!");
+            alert.setHeaderText("");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+            return;
+        }
 
         System.out.println("Name: " + name);
         System.out.println("Name: " + photo);

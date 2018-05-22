@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+import Exception.NoSuchAgeException;
+
 public abstract class UserModel {
     private String userName;
     private int age;
@@ -21,8 +23,12 @@ public abstract class UserModel {
 
     private Set<ConnectionModel> connections;
 
-    public UserModel(String userName, int age, String status, String photo, char gender, String state){
+    public UserModel(String userName, int age, String status, String photo, char gender, String state) throws Exception{
         this.userName = userName;
+        if (age < 0)
+            throw new NoSuchAgeException("Age cannot be negative.");
+        else if (age > 150)
+            throw new NoSuchAgeException("Age cannot be greater than 150.");
         this.age = age;
         this.status = status;
         this.photo = photo;
@@ -95,7 +101,7 @@ public abstract class UserModel {
         return false;
     }
 
-    public void removeConnection(String connectionName){
+    public void removeConnection (String connectionName) throws Exception{
         for (ConnectionModel connection : this.getConnections()){
             if (connection.getConnectionName().equals(connectionName))
             {
