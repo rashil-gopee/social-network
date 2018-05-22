@@ -1,3 +1,5 @@
+package Controller;
+
 import Constant.ApplicationConstant;
 import Model.*;
 
@@ -396,5 +398,26 @@ public class Driver {
 
 
     }
+
+    public Boolean verifyIfCouple(String name1, String name2){
+        for (UserModel userModel: USERS){
+            if (userModel.getUserName().equals(name1) || userModel.getUserName().equals(name2)){
+                String personToVerify;
+                if (userModel.getUserName().equals(name1))
+                    personToVerify = name1;
+                else
+                    personToVerify = name2;
+                for (ConnectionModel connectionModel: userModel.getConnections()){
+                    if (connectionModel.getConnectionType().equals(personToVerify) && connectionModel.getConnectionType().equals(ApplicationConstant.SPOUSE))
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
+
+//    public ConnectionModel getConnectionBetween (String person1, String person2){
+//        ConnectionModel connectionModel = new ConnectionModel();
+//    }
 
 }

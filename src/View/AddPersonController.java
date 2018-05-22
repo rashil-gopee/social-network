@@ -4,6 +4,8 @@ import Model.AdultUserModel;
 import Model.ChildUserModel;
 import Model.UserModel;
 import Model.YoungChildUserModel;
+import Controller.Driver;
+import Exception.NoParentException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -53,11 +55,11 @@ public class AddPersonController {
     private TextField txt_parent1;
 
     @FXML
-    private TextField getTxt_parent2;
+    private TextField txt_parent2;
 
     @FXML
     public void savePerson(ActionEvent event) throws Exception {
-        System.out.println("Button clicked!");
+        Driver driver = new Driver();
         Set<String> parents = new HashSet<>();
 
         if (txt_name.getText().length() == 0 || txt_state.getText().length() == 0 || txt_status.getText().length() == 0 || txt_age.getText().length() == 0 || genderToggle.getSelectedToggle() == null){
@@ -95,12 +97,28 @@ public class AddPersonController {
         UserModel userModel;
 
         try {
-            if (age >= 16)
+            if (age >= 16) {
                 userModel = new AdultUserModel(name, age, status, photo, gender, state);
-            else if (age > 2)
-                userModel = new ChildUserModel(name, age, status, photo, gender, state, parents);
-            else
-                userModel = new YoungChildUserModel(name, age, status, photo, gender, state, parents);
+                driver.addUser(userModel);
+            }
+            else {
+                if (txt_parent1.getText().length() > 0)
+                    parents.add(txt_parent1.getText());
+                if (txt_parent2.getText().length() > 0)
+                    parents.add(txt_parent2.getText());
+                if (driver.verifyIfCouple(txt_parent1.getText(), txt_parent2.getText())) {
+                    if (age > 2) {
+                        userModel = new ChildUserModel(name, age, status, photo, gender, state, parents);
+                        driver.addUser(userModel);
+                    }
+                    else {
+                        userModel = new YoungChildUserModel(name, age, status, photo, gender, state, parents);
+                        driver.addUser(userModel);
+                    }
+                }
+                else
+                    throw new NoParentException("Parents are not a couple!");
+            }
         }
         catch (Exception e){
             e.printStackTrace();
@@ -112,8 +130,6 @@ public class AddPersonController {
             return;
         }
 
-//        parentsGridPane.setVisible(false);
-
         System.out.println("Name: " + name);
         System.out.println("Name: " + photo);
         System.out.println("Name: " + status);
@@ -121,13 +137,10 @@ public class AddPersonController {
         System.out.println("Name: " + age);
         System.out.println("Name: " + state);
 
-        Parent parent = FXMLLoader.load(getClass().getResource("MainView.fxml"));
-        Stage mainWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        mainWindow.setScene(new Scene(parent));
+        goToMainMenu(event);
     }
 
     public void toggleParentsGridPane(){
-        System.out.println("tootl");
         int age;
         try{
             age = Integer.valueOf(txt_age.getText());
@@ -139,6 +152,12 @@ public class AddPersonController {
             parentsGridPane.setVisible(true);
         else
             parentsGridPane.setVisible(false);
+    }
+
+    public void goToMainMenu(ActionEvent event) throws Exception{
+        Parent parent = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        Stage mainWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        mainWindow.setScene(new Scene(parent));
     }
 
 }

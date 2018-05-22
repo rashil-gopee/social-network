@@ -1,3 +1,4 @@
+import Controller.Driver;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,8 +16,8 @@ public class Mininet extends Application {
         Driver driver = new Driver();
         if (driver.init()) {
             Parent root = FXMLLoader.load(getClass().getResource("View/MainView.fxml"));
-            primaryStage.setTitle("Add friend");
-            primaryStage.setScene(new Scene(root, 300, 275));
+            primaryStage.setTitle("Mininet - Social Network");
+            primaryStage.setScene(new Scene(root));
             primaryStage.show();
         }
         else {
