@@ -15,23 +15,37 @@ public class AdultUserModel extends UserModel implements iNotYoungChild {
     }
 
     public void addColleague(UserModel userModel){
-        if (userModel.getAge() > 16)
+        if (userModel.getAge() > 16) {
             this.addConnection(userModel, ApplicationConstant.COLLEAGUE);
+            userModel.addConnection(this, ApplicationConstant.COLLEAGUE);
+        }
     }
 
     public void addClassMate(UserModel userModel){
-        if (userModel.getAge() > 16)
-        this.addConnection(userModel, ApplicationConstant.CLASSMATE);
+        if (userModel.getAge() > 16) {
+            this.addConnection(userModel, ApplicationConstant.CLASSMATE);
+            userModel.addConnection(this, ApplicationConstant.CLASSMATE);
+        }
     }
 
     public void addFriend(UserModel userModel){
-        if (userModel.getAge() > 16)
-        this.addConnection(userModel, ApplicationConstant.FRIEND);
+        if (userModel.getAge() > 16) {
+            this.addConnection(userModel, ApplicationConstant.FRIEND);
+            userModel.addConnection(this, ApplicationConstant.FRIEND);
+        }
     }
 
     public void addSpouse(UserModel userModel){
-        if (userModel.getAge() > 16)
+        if (userModel.getAge() > 16) {
             this.addConnection(userModel, ApplicationConstant.SPOUSE);
+            userModel.addConnection(this, ApplicationConstant.SPOUSE);
+        }
+    }
+
+    public void addChild(UserModel userModel){
+        if (userModel.getAge() > 16) {
+            this.addConnection(userModel, ApplicationConstant.CHILD);
+        }
     }
 
     public Boolean verifySpouseName (String spouseName){
