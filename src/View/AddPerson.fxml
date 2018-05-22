@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="CENTER" hgap="10.0" prefHeight="400.0" prefWidth="600.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddPersonController">
+<GridPane alignment="CENTER" hgap="5.0" prefHeight="400.0" prefWidth="600.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddPersonController">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -22,22 +22,23 @@
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
+      <RowConstraints />
    </rowConstraints>
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" text="Mininet Social Network" textAlignment="CENTER" GridPane.columnIndex="1" />
-      <GridPane gridLinesVisible="true" hgap="10.0" vgap="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Label alignment="CENTER" contentDisplay="CENTER" text="Mininet Social Network" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+      <GridPane hgap="5.0" vgap="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="Name" />
@@ -50,15 +51,33 @@
             <TextField id="txt_photo" fx:id="txt_photo" promptText="Photo url" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField id="txt_status" fx:id="txt_status" promptText="Status" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField id="txt_state" fx:id="txt_state" promptText="State" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField id="txt_age" fx:id="txt_age" promptText="Age" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField id="txt_age" fx:id="txt_age" onKeyReleased="#toggleParentsGridPane" promptText="Age" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <RadioButton id="radio_male" fx:id="radio_male" mnemonicParsing="false" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <toggleGroup>
                   <ToggleGroup fx:id="genderToggle" />
                </toggleGroup></RadioButton>
-            <RadioButton id="radio_female" fx:id="radio_female" mnemonicParsing="false" text="Female" toggleGroup="$gender" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <RadioButton id="radio_female" fx:id="radio_female" mnemonicParsing="false" text="Female" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup></RadioButton>
          </children>
       </GridPane>
-      <Button mnemonicParsing="false" onAction="#savePerson" text="Save Person" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" text="Main Menu" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#savePerson" text="Save Person" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" text="Main Menu" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+      <GridPane fx:id="parentsGridPane" hgap="5.0" vgap="5.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Parents" />
+            <TextField fx:id="txt-parent1" promptText="Parent 1 Name" GridPane.rowIndex="1" />
+            <TextField fx:id="txt-parent2" promptText="Parent 2 Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
    </children>
 </GridPane>

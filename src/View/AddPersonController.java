@@ -14,6 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.util.HashSet;
@@ -21,6 +22,9 @@ import java.util.Set;
 
 
 public class AddPersonController {
+    @FXML
+    private GridPane parentsGridPane;
+
     @FXML
     private TextField txt_name;
 
@@ -44,6 +48,12 @@ public class AddPersonController {
 
     @FXML
     private ToggleGroup genderToggle;
+
+    @FXML
+    private TextField txt_parent1;
+
+    @FXML
+    private TextField getTxt_parent2;
 
     @FXML
     public void savePerson(ActionEvent event) throws Exception {
@@ -102,6 +112,8 @@ public class AddPersonController {
             return;
         }
 
+//        parentsGridPane.setVisible(false);
+
         System.out.println("Name: " + name);
         System.out.println("Name: " + photo);
         System.out.println("Name: " + status);
@@ -112,6 +124,21 @@ public class AddPersonController {
         Parent parent = FXMLLoader.load(getClass().getResource("MainView.fxml"));
         Stage mainWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         mainWindow.setScene(new Scene(parent));
+    }
+
+    public void toggleParentsGridPane(){
+        System.out.println("tootl");
+        int age;
+        try{
+            age = Integer.valueOf(txt_age.getText());
+        }
+        catch (Exception e){
+            return;
+        }
+        if (age <= 16)
+            parentsGridPane.setVisible(true);
+        else
+            parentsGridPane.setVisible(false);
     }
 
 }
