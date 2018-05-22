@@ -1,5 +1,3 @@
-package Controller;
-
 import Constant.ApplicationConstant;
 import Model.*;
 import javafx.scene.control.Alert;
@@ -11,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
 
-public class UserController {
+public class Driver {
 
     public static Set<UserModel> USERS = new HashSet<>();
 
@@ -306,32 +304,8 @@ public class UserController {
 //    }
 
     public void saveUsersToDb() {
-        Connection connection = null;
-        Statement statement = null;
-
         for (UserModel userModel : USERS) {
-            try {
-                Class.forName("org.sqlite.JDBC");
-                connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
-
-                statement = connection.createStatement();
-                String sql = "INSERT INTO people " +
-                        "VALUES ('" + userModel.getUserName() + "','" +
-                        userModel.getPhoto() + "','" +
-                        userModel.getStatus() + "','" +
-                        userModel.getGender() + "'," +
-                        userModel.getAge() + ",'" +
-                        userModel.getState() + "');";
-
-                System.out.println(sql);
-
-                statement.executeUpdate(sql);
-                statement.close();
-                connection.close();
-            } catch (Exception e) {
-                System.err.println(e.getClass().getName() + ": " + e.getMessage());
-                System.exit(0);
-            }
+            saveUser(userModel);
         }
         System.out.println("Records created successfully");
     }
@@ -373,6 +347,40 @@ public class UserController {
             System.exit(0);
         }
 
+    }
+
+    public void addUser(UserModel userModel){
+        saveUser(userModel);
+        USERS.add(userModel);
+    }
+
+    public void saveUser(UserModel userModel){
+        Connection connection = null;
+        Statement statement = null;
+
+            try {
+                Class.forName("org.sqlite.JDBC");
+                connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
+
+                statement = connection.createStatement();
+                String sql = "INSERT INTO people " +
+                        "VALUES ('" + userModel.getUserName() + "','" +
+                        userModel.getPhoto() + "','" +
+                        userModel.getStatus() + "','" +
+                        userModel.getGender() + "'," +
+                        userModel.getAge() + ",'" +
+                        userModel.getState() + "');";
+
+                System.out.println(sql);
+
+                statement.executeUpdate(sql);
+                statement.close();
+                connection.close();
+            } catch (Exception e) {
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                System.exit(0);
+            }
+        System.out.println("Record created successfully");
     }
 
     public ArrayList<String> getShorterstRelationPathway(UserModel userModel, String targetName) {

@@ -1,5 +1,3 @@
-import Controller.UserController;
-import Model.UserModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,16 +8,12 @@ import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.util.Set;
-
 public class Mininet extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        UserController userController = new UserController();
-        if (userController.init()) {
+        Driver driver = new Driver();
+        if (driver.init()) {
             Parent root = FXMLLoader.load(getClass().getResource("View/MainView.fxml"));
             primaryStage.setTitle("Add friend");
             primaryStage.setScene(new Scene(root, 300, 275));
