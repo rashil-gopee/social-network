@@ -29,10 +29,12 @@
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
+      <RowConstraints />
    </rowConstraints>
    <children>
       <Button fx:id="btn_main" alignment="CENTER" mnemonicParsing="false" onAction="#pressButton" text="Add Person" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <Label alignment="CENTER" text="Mininet Social Network" textAlignment="CENTER" GridPane.columnIndex="4" />
-      <Button mnemonicParsing="false" text="Print All People" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+      <Button mnemonicParsing="false" text="Print All People" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+      <Button mnemonicParsing="false" onAction="#selectPerson" text="Select Person" GridPane.columnIndex="4" GridPane.rowIndex="3" />
    </children>
 </GridPane>

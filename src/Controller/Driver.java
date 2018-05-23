@@ -2,6 +2,7 @@ package Controller;
 
 import Constant.ApplicationConstant;
 import Model.*;
+import Exception.NoParentException;
 
 import java.io.File;
 import java.sql.Connection;
@@ -11,7 +12,6 @@ import java.sql.Statement;
 import java.util.*;
 
 public class Driver {
-
     public static Set<UserModel> USERS = new HashSet<>();
 
     public Boolean init() {
@@ -414,6 +414,73 @@ public class Driver {
             }
         }
         return false;
+    }
+
+    public UserModel getUser(String userName){
+        for (UserModel user: USERS){
+            if (user.getUserName().equals(userName))
+                return user;
+        }
+        return null;
+    }
+
+    public void printUsers(){
+        for (UserModel user: USERS){
+            System.out.println("Name: " + user.getUserName());
+            System.out.println("Photo: " + user.getPhoto());
+            System.out.println("Status: " + user.getStatus());
+            System.out.println("Gender: " + user.getGender());
+            System.out.println("Age: " + user.getAge());
+            System.out.println("State: " + user.getState());
+        }
+    }
+
+    public Boolean verifyIfIsParent(UserModel userModel){
+        for (ConnectionModel connectionModel: userModel.getConnections()){
+            if (connectionModel.getConnectionType().equals(ApplicationConstant.CHILD))
+                return true;
+        }
+        return false;
+    }
+
+    public void deleteUserFromDb(String userName){
+        Connection connection = null;
+        Statement statement = null;
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
+
+            statement = connection.createStatement();
+            String sql = "DELETE FROM people WHERE name='" + userName + "';";
+
+            System.out.println(sql);
+
+            statement.executeUpdate(sql);
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Record deleted successfully");
+    }
+
+    public void deleteUser(UserModel userModel) throws Exception{
+        if (!verifyIfIsParent(userModel)) {
+            for (ConnectionModel connectionModel: userModel.getConnections()){
+                UserModel relative = getUser(connectionModel.getConnectionName());
+                for (ConnectionModel connection: relative.getConnections())
+                {
+                    if (connection.getConnectionName().equals(userModel.getUserName()))
+                        relative.getConnections().remove(connection);
+                }
+            }
+            deleteUserFromDb(userModel.getUserName());
+            USERS.remove(userModel);
+        }
+        else
+            throw new NoParentException("Cannot delete a parent.");
     }
 
 //    public ConnectionModel getConnectionBetween (String person1, String person2){
