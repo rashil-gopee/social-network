@@ -15,7 +15,6 @@ public class YoungChildUserModel extends UserModel {
         }
     }
 
-    @Override
     public void removeConnection(String connectionName) throws Exception{
         for (ConnectionModel connection : this.getConnections()) {
             if (connection.getConnectionName().equals(connectionName)) {
@@ -29,10 +28,14 @@ public class YoungChildUserModel extends UserModel {
         }
     }
 
-    public void addSibling(UserModel userModel) {
-        if (((YoungChildUserModel)userModel).verifyParents(this.getParentsNames())){
-            addConnection(userModel, ApplicationConstant.SIBLING);
+    public void addSibling(UserModel userModel) throws Exception{
+        if (userModel instanceof YoungChildUserModel) {
+            if (((YoungChildUserModel) userModel).verifyParents(this.getParentsNames())) {
+                addConnection(userModel, ApplicationConstant.SIBLING);
+            }
         }
+        else
+            throw new Exception("Only Young Child can be added as sibling.");
     }
 
     public boolean verifyParents(Set<String> parents) {

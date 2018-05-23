@@ -24,10 +24,10 @@ public class Driver {
             createDb();
             saveUsersToDb();
             return true;
-        }
-        else if (dbFile.exists()) {
+        } else if (dbFile.exists()) {
             loadUsersFromDb();
             loadRelations();
+            printUsers();
             return true;
         }
         return false;
@@ -45,7 +45,7 @@ public class Driver {
             String sql = "SELECT * FROM people;";
             ResultSet resultSet = statement.executeQuery(sql);
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 String name = resultSet.getString("name");
                 String photo = resultSet.getString("photo");
                 String status = resultSet.getString("status");
@@ -54,7 +54,7 @@ public class Driver {
                 String state = resultSet.getString("state");
 
                 UserModel userModel;
-                if (age >= 16 && age <= 150) {
+                if (age >= 16) {
                     userModel = new AdultUserModel(name, age, status, photo, gender, state);
                     USERS.add(userModel);
                 } else {
@@ -64,7 +64,7 @@ public class Driver {
                         if (age > 2) {
                             userModel = new ChildUserModel(name, age, status, photo, gender, state, parents);
                             USERS.add(userModel);
-                        } else if (age>=0 && age < 2) {
+                        } else if (age >= 0) {
                             userModel = new YoungChildUserModel(name, age, status, photo, gender, state, parents);
                             USERS.add(userModel);
                         }
@@ -87,19 +87,13 @@ public class Driver {
                 String line = input.nextLine();
                 StringTokenizer st = new StringTokenizer(line, ",");
                 String name = st.nextToken().trim();
-                System.out.println("name: " + name);
                 String photo = st.nextToken().trim().replaceAll("^\"|\"$", "");
-                System.out.println("photo: " + photo);
                 String status = st.nextToken().trim().replaceAll("^\"|\"$", "");
-                System.out.println("status: " + status);
                 char gender = st.nextToken().trim().charAt(0);
-                System.out.println("gender: " + gender);
                 int age = Integer.parseInt(st.nextToken().trim());
-                System.out.println("age: " + age);
                 String state = st.nextToken().trim();
-                System.out.println("state: " + state);
 
-                UserModel userModel;
+                UserModel userModel = null;
                 if (age >= 16) {
                     userModel = new AdultUserModel(name, age, status, photo, gender, state);
                     USERS.add(userModel);
@@ -114,6 +108,14 @@ public class Driver {
                         }
                         USERS.add(userModel);
                     }
+                }
+                if (userModel != null) {
+                    System.out.println("Name: " + userModel.getUserName());
+                    System.out.println("Photo: " + userModel.getPhoto());
+                    System.out.println("Status: " + userModel.getStatus());
+                    System.out.println("Gender: " + userModel.getGender());
+                    System.out.println("Age: " + userModel.getAge());
+                    System.out.println("State: " + userModel.getState());
                 }
             }
         } catch (Exception e) {
@@ -268,17 +270,7 @@ public class Driver {
                     "age INT NOT NULL , " +
                     "state TEXT NOT NULL);";
 
-//                String createRelationsTblSql = "CREATE TABLE people " +
-//                        "(name PRIMARY KEY VARCHAR(50) NOT NULL, " +
-//                        "age INT NOT NULL, " +
-//                        "photo VARCHAR(50), " +
-//                        "status VARCHAR(50), " +
-//                        "gender CHAR(1) NOT NULL , " +
-//                        "age INTEGER NOT NULL , " +
-//                        "state VARCHAR(3) NOT NULL;";
-
             statement.executeUpdate(createPeopleTblSql);
-            //statement.executeUpdate(createRelationsTblSql);
 
             statement.close();
             connection.close();
@@ -335,53 +327,52 @@ public class Driver {
             connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
 
             statement = connection.createStatement();
-            String sql = "UPDATE people SET name = '" + userModel.getUserName() +"'," +
-                    "photo = '" + userModel.getPhoto() +"'," +
-                    "status = '" + userModel.getPhoto() +"'," +
-                    "gender = '" + userModel.getGender() +"'," +
-                    "age = '" + userModel.getAge() +"'," +
-                    "state = '" + userModel.getState() +"'" +
-                    "WHERE name='" + originalUsername +"';";
+            String sql = "UPDATE people SET name = '" + userModel.getUserName() + "'," +
+                    "photo = '" + userModel.getPhoto() + "'," +
+                    "status = '" + userModel.getPhoto() + "'," +
+                    "gender = '" + userModel.getGender() + "'," +
+                    "age = '" + userModel.getAge() + "'," +
+                    "state = '" + userModel.getState() + "'" +
+                    "WHERE name='" + originalUsername + "';";
             statement.executeUpdate(sql);
             connection.commit();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
-
     }
 
-    public void addUser(UserModel userModel){
+    public void addUser(UserModel userModel) {
         saveUser(userModel);
         USERS.add(userModel);
     }
 
-    public void saveUser(UserModel userModel){
+    public void saveUser(UserModel userModel) {
         Connection connection = null;
         Statement statement = null;
 
-            try {
-                Class.forName("org.sqlite.JDBC");
-                connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
+        try {
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection("jdbc:sqlite:mininet.db");
 
-                statement = connection.createStatement();
-                String sql = "INSERT INTO people " +
-                        "VALUES ('" + userModel.getUserName() + "','" +
-                        userModel.getPhoto() + "','" +
-                        userModel.getStatus() + "','" +
-                        userModel.getGender() + "'," +
-                        userModel.getAge() + ",'" +
-                        userModel.getState() + "');";
+            statement = connection.createStatement();
+            String sql = "INSERT INTO people " +
+                    "VALUES ('" + userModel.getUserName() + "','" +
+                    userModel.getPhoto() + "','" +
+                    userModel.getStatus() + "','" +
+                    userModel.getGender() + "'," +
+                    userModel.getAge() + ",'" +
+                    userModel.getState() + "');";
 
-                System.out.println(sql);
+            System.out.println(sql);
 
-                statement.executeUpdate(sql);
-                statement.close();
-                connection.close();
-            } catch (Exception e) {
-                System.err.println(e.getClass().getName() + ": " + e.getMessage());
-                System.exit(0);
-            }
+            statement.executeUpdate(sql);
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
         System.out.println("Record created successfully");
     }
 
@@ -395,19 +386,17 @@ public class Driver {
         }
 
         return relationPathway;
-
-
     }
 
-    public Boolean verifyIfCouple(String name1, String name2){
-        for (UserModel userModel: USERS){
-            if (userModel.getUserName().equals(name1) || userModel.getUserName().equals(name2)){
+    public Boolean verifyIfCouple(String name1, String name2) {
+        for (UserModel userModel : USERS) {
+            if (userModel.getUserName().equals(name1) || userModel.getUserName().equals(name2)) {
                 String personToVerify;
                 if (userModel.getUserName().equals(name1))
                     personToVerify = name1;
                 else
                     personToVerify = name2;
-                for (ConnectionModel connectionModel: userModel.getConnections()){
+                for (ConnectionModel connectionModel : userModel.getConnections()) {
                     if (connectionModel.getConnectionType().equals(personToVerify) && connectionModel.getConnectionType().equals(ApplicationConstant.SPOUSE))
                         return true;
                 }
@@ -416,34 +405,39 @@ public class Driver {
         return false;
     }
 
-    public UserModel getUser(String userName){
-        for (UserModel user: USERS){
+    public UserModel getUser(String userName) {
+        for (UserModel user : USERS) {
             if (user.getUserName().equals(userName))
                 return user;
         }
         return null;
     }
 
-    public void printUsers(){
-        for (UserModel user: USERS){
+    public void printUsers() {
+        for (UserModel user : USERS) {
             System.out.println("Name: " + user.getUserName());
             System.out.println("Photo: " + user.getPhoto());
             System.out.println("Status: " + user.getStatus());
             System.out.println("Gender: " + user.getGender());
             System.out.println("Age: " + user.getAge());
             System.out.println("State: " + user.getState());
+
+            System.out.println("Connections:");
+            for (ConnectionModel connection : user.getConnections()) {
+                System.out.println("\t" + connection.getConnectionName() + "\t" + connection.getConnectionType());
+            }
         }
     }
 
-    public Boolean verifyIfIsParent(UserModel userModel){
-        for (ConnectionModel connectionModel: userModel.getConnections()){
+    public Boolean verifyIfIsParent(UserModel userModel) {
+        for (ConnectionModel connectionModel : userModel.getConnections()) {
             if (connectionModel.getConnectionType().equals(ApplicationConstant.CHILD))
                 return true;
         }
         return false;
     }
 
-    public void deleteUserFromDb(String userName){
+    public void deleteUserFromDb(String userName) {
         Connection connection = null;
         Statement statement = null;
 
@@ -466,20 +460,18 @@ public class Driver {
         System.out.println("Record deleted successfully");
     }
 
-    public void deleteUser(UserModel userModel) throws Exception{
+    public void deleteUser(UserModel userModel) throws Exception {
         if (!verifyIfIsParent(userModel)) {
-            for (ConnectionModel connectionModel: userModel.getConnections()){
+            for (ConnectionModel connectionModel : userModel.getConnections()) {
                 UserModel relative = getUser(connectionModel.getConnectionName());
-                for (ConnectionModel connection: relative.getConnections())
-                {
+                for (ConnectionModel connection : relative.getConnections()) {
                     if (connection.getConnectionName().equals(userModel.getUserName()))
                         relative.getConnections().remove(connection);
                 }
             }
             deleteUserFromDb(userModel.getUserName());
             USERS.remove(userModel);
-        }
-        else
+        } else
             throw new NoParentException("Cannot delete a parent.");
     }
 

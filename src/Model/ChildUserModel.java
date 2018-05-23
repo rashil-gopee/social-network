@@ -21,16 +21,16 @@ public class ChildUserModel extends UserModel implements iNotYoungChild {
     }
 
     public void addClassMate(UserModel userModel) throws Exception{
-        if (userModel.getAge() <= 16) {
+        if (userModel instanceof ChildUserModel) {
             this.addConnection(userModel, ApplicationConstant.CLASSMATE);
         }
         else{
-            throw new NotToBeClassmatesException("A child cannot be classmate with an adult.");
+            throw new NotToBeClassmatesException("Child can be classmate with child only.");
         }
     }
 
     public void addFriend(UserModel userModel) throws Exception{
-        if (userModel.getAge() <= 16) {
+        if (userModel instanceof ChildUserModel) {
             if (((this.getAge() > userModel.getAge()) && (this.getAge() - userModel.getAge() <= 3)) || ((userModel.getAge() > this.getAge()) && (userModel.getAge() - this.getAge() <= 3))) {
                 this.addConnection(userModel, ApplicationConstant.FRIEND);
             }
@@ -39,7 +39,20 @@ public class ChildUserModel extends UserModel implements iNotYoungChild {
             }
         }
         else{
-            throw new NotToBeFriendsException("A child cannot be friend with an adult.");
+            throw new NotToBeFriendsException("Child can be friend with child only");
+        }
+    }
+
+    public void removeConnection(String connectionName) throws Exception{
+        for (ConnectionModel connection : this.getConnections()) {
+            if (connection.getConnectionName().equals(connectionName)) {
+                if (!connection.getConnectionType().equals(ApplicationConstant.PARENT)) {
+                    this.getConnections().remove(connection);
+                    return;
+                }
+                else
+                    throw new NoParentException("Cannot delete parent as a connection.");
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ public class AdultUserModel extends UserModel implements iNotYoungChild {
     }
 
     public void addColleague(UserModel userModel) throws Exception{
-        if (userModel.getAge() > 16) {
+        if (userModel instanceof AdultUserModel) {
             this.addConnection(userModel, ApplicationConstant.COLLEAGUE);
             userModel.addConnection(this, ApplicationConstant.COLLEAGUE);
         }
@@ -27,7 +27,7 @@ public class AdultUserModel extends UserModel implements iNotYoungChild {
     }
 
     public void addClassMate(UserModel userModel) throws Exception{
-        if (userModel.getAge() > 16) {
+        if (userModel instanceof AdultUserModel) {
             this.addConnection(userModel, ApplicationConstant.CLASSMATE);
             userModel.addConnection(this, ApplicationConstant.CLASSMATE);
         }
@@ -36,7 +36,7 @@ public class AdultUserModel extends UserModel implements iNotYoungChild {
     }
 
     public void addFriend(UserModel userModel) throws Exception{
-        if (userModel.getAge() > 16) {
+        if (userModel instanceof AdultUserModel) {
             this.addConnection(userModel, ApplicationConstant.FRIEND);
             userModel.addConnection(this, ApplicationConstant.FRIEND);
         }
@@ -45,16 +45,22 @@ public class AdultUserModel extends UserModel implements iNotYoungChild {
     }
 
     public void addSpouse(UserModel userModel) throws Exception{
-        if (userModel.getAge() > 16) {
-            this.addConnection(userModel, ApplicationConstant.SPOUSE);
-            userModel.addConnection(this, ApplicationConstant.SPOUSE);
+        if (userModel instanceof AdultUserModel) {
+            if (!this.verifyIfSingle())
+                throw new NotTobeCoupledException(this.getUserName() + " already has a spouse.");
+            if (!((AdultUserModel)userModel).verifyIfSingle())
+                throw new NotTobeCoupledException(userModel.getUserName() + " already has a spouse.");
+            else {
+                this.addConnection(userModel, ApplicationConstant.SPOUSE);
+                userModel.addConnection(this, ApplicationConstant.SPOUSE);
+            }
         }
         else
-            throw new NotTobeCoupledException("Adult cannot have a child as spouse.");
+            throw new NotTobeCoupledException("Cannot have a child as spouse.");
     }
 
     public void addChild(UserModel userModel){
-        if (userModel.getAge() > 16) {
+        if (userModel instanceof AdultUserModel) {
             this.addConnection(userModel, ApplicationConstant.CHILD);
         }
     }
@@ -65,6 +71,24 @@ public class AdultUserModel extends UserModel implements iNotYoungChild {
                 return true;
         }
         return false;
+    }
+
+    public Boolean verifyIfSingle(){
+        for (ConnectionModel connectionModel : this.getConnections()){
+            if (connectionModel.getConnectionType().equals(ApplicationConstant.SPOUSE))
+                return false;
+        }
+        return true;
+    }
+
+    public void removeConnection (String connectionName) throws Exception{
+        for (ConnectionModel connection : this.getConnections()){
+            if (connection.getConnectionName().equals(connectionName))
+            {
+                this.getConnections().remove(connection);
+                return;
+            }
+        }
     }
 
 }

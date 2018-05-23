@@ -101,19 +101,11 @@ public abstract class UserModel {
         return false;
     }
 
-    public void removeConnection (String connectionName) throws Exception{
-        for (ConnectionModel connection : this.getConnections()){
-            if (connection.getConnectionName().equals(connectionName))
-            {
-                connections.remove(connection);
-                return;
-            }
-        }
-    }
-
     public void addConnection(UserModel user, String connectionType) {
         this.getConnections().add(new ConnectionModel(user.getUserName(), connectionType));
         user.getConnections().add(new ConnectionModel(this.getUserName(), connectionType));
     }
+
+    public abstract void removeConnection (String connectionName) throws Exception;
 
 }

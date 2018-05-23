@@ -2,6 +2,7 @@ package View;
 
 import Controller.Driver;
 import Model.UserModel;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -54,5 +55,11 @@ public class MainController {
 
 // The Java 8 way to get the response value (with lambda expression).
 //        result.ifPresent(name -> System.out.println("Your name: " + name));
+    }
+
+    public void exit(Event event){
+        Stage mainWindow = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        mainWindow.hide();
+        System.exit(1);
     }
 }
