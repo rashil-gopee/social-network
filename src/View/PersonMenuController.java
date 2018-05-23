@@ -2,10 +2,7 @@ package View;
 
 import Constant.ApplicationConstant;
 import Controller.Driver;
-import Model.AdultUserModel;
-import Model.ChildUserModel;
-import Model.UserModel;
-import Model.YoungChildUserModel;
+import Model.*;
 import Utils.Helper;
 
 import Exception.NotToBeClassmatesException;
@@ -32,18 +29,27 @@ public class PersonMenuController {
     @FXML
     TextField txt_addConnectionName;
 
+    @FXML
+    TextField checkConnection_TextField;
+
     public UserModel userModel;
 
     void initialize() {}
     void initData(UserModel userModel) {
         this.userModel = userModel;
         connectionTypeComboBox.getItems().removeAll(connectionTypeComboBox.getItems());
-        connectionTypeComboBox.getItems().addAll(ApplicationConstant.CLASSMATE, ApplicationConstant.FRIEND, ApplicationConstant.SPOUSE, ApplicationConstant.COLLEAGUE, ApplicationConstant.SIBLING);
+        connectionTypeComboBox.getItems().addAll(ApplicationConstant.FRIEND, ApplicationConstant.CLASSMATE, ApplicationConstant.COLLEAGUE, ApplicationConstant.SPOUSE, ApplicationConstant.SIBLING);
+        connectionTypeComboBox.getSelectionModel().select(0);
     }
 
-    public void viewProfile(ActionEvent event){
-//        System.out.println("Test");
-        System.out.println("Passed user:" + userModel.getUserName());
+    public void viewProfile(ActionEvent event) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewProfile.fxml"));
+
+        Stage mainWindow = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        mainWindow.setScene(new Scene(loader.load()));
+
+        ViewProfileController controller = loader.<ViewProfileController>getController();
+        controller.initData(userModel);
     }
 
     public void deletePerson(ActionEvent event){
@@ -111,6 +117,11 @@ public class PersonMenuController {
                     else
                         throw new NotToBeFriendsException("Young child cannot add friend.");
                 }
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success!");
+                alert.setContentText(connectionName + " was successfully added as a connection.");
+                alert.showAndWait();
+                goToMainMenu((ActionEvent)event);
             }
             else{
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -123,6 +134,23 @@ public class PersonMenuController {
         catch (Exception e){
             Helper.handleException(e);
         }
+    }
+
+    public void checkConnection(ActionEvent event){
+        String connectionName = checkConnection_TextField.getText();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Check connection");
+        for (ConnectionModel connectionModel:userModel.getConnections()){
+            if (connectionModel.getConnectionName().equals(connectionName)){
+                alert.setHeaderText("Is a connection!");
+                alert.setContentText(connectionName + " is a " + connectionModel.getConnectionType() + " of " + userModel.getUserName());
+                alert.showAndWait();
+                return;
+            }
+        }
+        alert.setHeaderText("Not a connection!");
+        alert.setContentText(connectionName + " is not a connection of " + userModel.getUserName());
+        alert.showAndWait();
     }
 
 }

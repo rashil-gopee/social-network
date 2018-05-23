@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mininet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mininet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/AdultUserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/AdultUserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ChildUserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ChildUserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddFriend.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddFriend.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddPersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddPersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PersonMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PersonMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/PersonMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PersonMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/PersonMenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PersonMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/PersonProfileView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ViewProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ViewProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ViewProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ViewProfileController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,19 +112,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainMenu.fxml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/MainMenu.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="ViewProfile.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/ViewProfile.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainMenuController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/MainMenuController.java">
+      <file leaf-file-name="PersonMenu.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/PersonMenu.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="389">
+              <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Driver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="473" column="4" selection-start-line="473" selection-start-column="4" selection-end-line="473" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#loadUsersFromDb#0;class#Driver#0" />
+                <element signature="method#loadUsersFromFile#0;class#Driver#0" />
+                <element signature="method#getParentsFromFile#0;class#Driver#0" />
+                <element signature="method#verifyCoupleFromFile#0;class#Driver#0" />
+                <element signature="method#createDb#0;class#Driver#0" />
               </folding>
             </state>
           </provider>
@@ -140,15 +153,40 @@
         <entry file="file://$PROJECT_DIR$/src/View/AddPerson.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-966" />
+            <state relative-caret-position="-828" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddPersonController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/AddPersonController.java">
+      <file leaf-file-name="ViewProfileController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/ViewProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2745">
-              <caret line="127" column="12" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="49" />
+            <state relative-caret-position="416">
+              <caret line="58" column="41" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonMenuController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/PersonMenuController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2969">
+              <caret line="146" column="36" lean-forward="true" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1694#1717#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenuController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/MainMenuController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -187,7 +225,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/src/View/AddFriend.fxml" />
         <option value="$PROJECT_DIR$/src/test.fxml" />
         <option value="$PROJECT_DIR$/src/sample.fxml" />
@@ -225,19 +262,20 @@
         <option value="$PROJECT_DIR$/src/Helper/Helper.java" />
         <option value="$PROJECT_DIR$/src/Utils/Helper.java" />
         <option value="$PROJECT_DIR$/src/View/ViewProfileView.fxml" />
-        <option value="$PROJECT_DIR$/src/View/ViewProfileController.java" />
-        <option value="$PROJECT_DIR$/src/View/ViewProfile.fxml" />
         <option value="$PROJECT_DIR$/src/View/MainController.java" />
         <option value="$PROJECT_DIR$/src/View/MainView.fxml" />
         <option value="$PROJECT_DIR$/src/View/PersonMenuView.fxml" />
-        <option value="$PROJECT_DIR$/src/View/PersonMenuController.java" />
-        <option value="$PROJECT_DIR$/src/Controller/Driver.java" />
         <option value="$PROJECT_DIR$/src/Model/UserModel.java" />
         <option value="$PROJECT_DIR$/src/Model/YoungChildUserModel.java" />
         <option value="$PROJECT_DIR$/src/Model/AdultUserModel.java" />
         <option value="$PROJECT_DIR$/src/Model/ChildUserModel.java" />
         <option value="$PROJECT_DIR$/src/View/PersonProfile.fxml" />
         <option value="$PROJECT_DIR$/src/View/MainMenu.fxml" />
+        <option value="$PROJECT_DIR$/src/View/ViewProfileController.java" />
+        <option value="$PROJECT_DIR$/src/View/ViewProfile.fxml" />
+        <option value="$PROJECT_DIR$/src/View/PersonMenu.fxml" />
+        <option value="$PROJECT_DIR$/src/View/PersonMenuController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Driver.java" />
       </list>
     </option>
   </component>
@@ -279,6 +317,12 @@
               <item name="social-network" type="b2602c69:ProjectViewProjectNode" />
               <item name="social-network" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="social-network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social-network" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -310,13 +354,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\Desktop\RMIT\Advanced Programming\Assignments\Assignment 2\social-network\src\Resources" />
       <recent name="D:\Users\Desktop\RMIT\Advanced Programming\Assignments\Assignment 2\social-network" />
       <recent name="D:\Users\Desktop\RMIT\Advanced Programming\Assignments\Assignment 2\social-network\src\View" />
       <recent name="D:\Users\Desktop\RMIT\Advanced Programming\Assignments\Assignment 2\social-network\src" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -470,7 +515,7 @@
       <workItem from="1526947406757" duration="26614000" />
       <workItem from="1527022946942" duration="1799000" />
       <workItem from="1527063754845" duration="11362000" />
-      <workItem from="1527075443556" duration="1631000" />
+      <workItem from="1527075443556" duration="10692000" />
     </task>
     <servers />
   </component>
@@ -483,35 +528,36 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97115000" />
+    <option name="totallyTimeSpent" value="106176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="9" />
       <window_info anchor="bottom" id="TODO" order="16" />
-      <window_info id="simpleUML" />
+      <window_info id="simpleUML" order="0" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.42720512" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info id="Image Layers" order="4" />
+      <window_info id="Image Layers" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.33581296" />
+      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.33581296" />
       <window_info anchor="bottom" id="Version Control" order="15" />
       <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.6703755" visible="true" weight="0.22916667" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="1" />
+      <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.6703755" visible="true" weight="0.18697916" />
       <window_info anchor="right" id="Database" order="8" weight="0.328125" />
-      <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
-      <window_info id="UI Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.2763018" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="right" id="JetGradle" order="7" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.4275862" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="3" />
@@ -541,7 +587,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/Driver.java</url>
-          <line>409</line>
+          <line>402</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -571,17 +617,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Mininet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DependentUserModel.java" />
     <entry file="file://$PROJECT_DIR$/src/Model/ConnectionModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -785,13 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ViewProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/Helper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -803,37 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/PersonMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1610">
-          <caret line="109" column="75" lean-forward="true" selection-start-line="109" selection-start-column="75" selection-end-line="109" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4f70a47f-4136-4400-ac73-6d3133f7676d/schema/main/table/people">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1541">
-          <caret line="67" column="114" lean-forward="true" selection-start-line="67" selection-start-column="114" selection-end-line="67" selection-end-column="114" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getParentsFromFile#0;class#Driver#0" />
-            <element signature="method#verifyCoupleFromFile#0;class#Driver#0" />
-            <element signature="method#loadRelations#0;class#Driver#0" />
-            <element signature="method#createDb#0;class#Driver#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -920,10 +917,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainMenuController.java">
+    <entry file="file://$PROJECT_DIR$/src/View/PersonProfile.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/MainMenu.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="-386">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4f70a47f-4136-4400-ac73-6d3133f7676d/schema/main/table/people">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/AddPersonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2331">
+          <caret line="127" column="12" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ViewProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="58" column="41" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -933,26 +959,60 @@
     <entry file="file://$PROJECT_DIR$/src/View/AddPerson.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-966" />
+        <state relative-caret-position="-828" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/PersonProfile.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/View/ViewProfile.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/AddPersonController.java">
+    <entry file="file://$PROJECT_DIR$/src/View/MainMenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2745">
-          <caret line="127" column="12" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="49" />
+        <state relative-caret-position="324">
+          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainMenu.fxml">
+    <entry file="file://$PROJECT_DIR$/src/View/PersonMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2969">
+          <caret line="146" column="36" lean-forward="true" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1694#1717#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/PersonMenu.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="473" column="4" selection-start-line="473" selection-start-column="4" selection-end-line="473" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadUsersFromDb#0;class#Driver#0" />
+            <element signature="method#loadUsersFromFile#0;class#Driver#0" />
+            <element signature="method#getParentsFromFile#0;class#Driver#0" />
+            <element signature="method#verifyCoupleFromFile#0;class#Driver#0" />
+            <element signature="method#createDb#0;class#Driver#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

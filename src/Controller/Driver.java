@@ -109,14 +109,6 @@ public class Driver {
                         USERS.add(userModel);
                     }
                 }
-                if (userModel != null) {
-                    System.out.println("Name: " + userModel.getUserName());
-                    System.out.println("Photo: " + userModel.getPhoto());
-                    System.out.println("Status: " + userModel.getStatus());
-                    System.out.println("Gender: " + userModel.getGender());
-                    System.out.println("Age: " + userModel.getAge());
-                    System.out.println("State: " + userModel.getState());
-                }
             }
         } catch (Exception e) {
             System.out.println("Error in the fileScanner !!!");
@@ -234,8 +226,9 @@ public class Driver {
                     } else if (type.equals(ApplicationConstant.PARENT)) {
                         if (userModel instanceof AdultUserModel)
                             userModel.getConnections().add(new ConnectionModel(relativeName, ApplicationConstant.CHILD));
-//                        else
-//                            userModel.getConnections().add(new ConnectionModel(relativeName, ApplicationConstant.PARENT));
+                    }
+                    else if (type.equals("couple")){
+                        userModel.getConnections().add(new ConnectionModel(relativeName, ApplicationConstant.SPOUSE));
                     }
 
                 }
@@ -478,5 +471,6 @@ public class Driver {
 //    public ConnectionModel getConnectionBetween (String person1, String person2){
 //        ConnectionModel connectionModel = new ConnectionModel();
 //    }
+    
 
 }
