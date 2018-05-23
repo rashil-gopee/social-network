@@ -155,7 +155,7 @@ public class AddPersonController {
     }
 
     public void goToMainMenu(ActionEvent event) throws Exception{
-        Parent parent = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         Stage mainWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         mainWindow.setScene(new Scene(parent));
     }

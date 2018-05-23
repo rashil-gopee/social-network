@@ -11,6 +11,8 @@ import Exception.NotToBeFriendsException;
 import Exception.NotToBeClassmatesException;
 import Exception.NotTobeCoupledException;
 import Exception.NotToBeColleaguesException;
+import Exception.NoAvailableException;
+import Exception.TooYoungException;
 
 public class AdultUserModel extends UserModel implements iNotYoungChild {
     public AdultUserModel(String userName, int age, String status, String photo, char gender, String state) throws Exception{
@@ -40,16 +42,18 @@ public class AdultUserModel extends UserModel implements iNotYoungChild {
             this.addConnection(userModel, ApplicationConstant.FRIEND);
             userModel.addConnection(this, ApplicationConstant.FRIEND);
         }
-        else
+        else if (userModel instanceof ChildUserModel)
             throw new NotToBeFriendsException("Adult cannot be friend with a child.");
+        else
+            throw new TooYoungException("Cannot be friend with young child.");
     }
 
     public void addSpouse(UserModel userModel) throws Exception{
         if (userModel instanceof AdultUserModel) {
             if (!this.verifyIfSingle())
-                throw new NotTobeCoupledException(this.getUserName() + " already has a spouse.");
+                throw new NoAvailableException(this.getUserName() + " already has a spouse.");
             if (!((AdultUserModel)userModel).verifyIfSingle())
-                throw new NotTobeCoupledException(userModel.getUserName() + " already has a spouse.");
+                throw new NoAvailableException(userModel.getUserName() + " already has a spouse.");
             else {
                 this.addConnection(userModel, ApplicationConstant.SPOUSE);
                 userModel.addConnection(this, ApplicationConstant.SPOUSE);

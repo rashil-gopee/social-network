@@ -15,7 +15,7 @@ public class Mininet extends Application {
     public void start(Stage primaryStage) throws Exception{
         Driver driver = new Driver();
         if (driver.init()) {
-            Parent root = FXMLLoader.load(getClass().getResource("View/MainView.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("View/MainMenu.fxml"));
             primaryStage.setTitle("Mininet - Social Network");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();

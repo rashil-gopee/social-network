@@ -15,7 +15,7 @@ import javafx.event.ActionEvent;
 
 import java.util.Optional;
 
-public class MainController {
+public class MainMenuController {
     public void pressButton(ActionEvent event) throws Exception{
         System.out.println("Button clicked!");
         Parent addFriend = FXMLLoader.load(getClass().getResource("AddPerson.fxml"));
@@ -36,7 +36,7 @@ public class MainController {
             UserModel userModel = driver.getUser(result.get());
             if (userModel != null) {
                 System.out.println("Your name: " + result.get());
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("PersonMenuView.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("PersonMenu.fxml"));
 
                 Stage mainWindow = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 mainWindow.setScene(new Scene(loader.load()));
