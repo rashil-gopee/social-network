@@ -5,6 +5,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <GridPane alignment="CENTER" gridLinesVisible="true" hgap="10" prefHeight="400.0" prefWidth="600.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuController">
    <columnConstraints>
@@ -36,7 +37,10 @@
    </rowConstraints>
    <children>
       <Button fx:id="btn_main" alignment="CENTER" mnemonicParsing="false" onAction="#pressButton" text="Add Person" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-      <Label alignment="CENTER" prefHeight="400.0" prefWidth="800.0" text="Mininet Social Network" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+      <Label alignment="CENTER" prefHeight="400.0" prefWidth="800.0" text="Mininet Social Network" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
       <Button mnemonicParsing="false" text="Print All People" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" />
       <Button mnemonicParsing="false" onAction="#selectPerson" text="Select Person" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
       <Button mnemonicParsing="false" onAction="#exit" text="Exit" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="11" />

@@ -10,30 +10,30 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PersonMenuController">
    <children>
-      <Button layoutX="237.0" layoutY="62.0" mnemonicParsing="false" onAction="#viewProfile" text="View Profile" />
-      <Button layoutX="230.0" layoutY="104.0" mnemonicParsing="false" onAction="#deletePerson" text="Delete Person" />
-      <Separator layoutX="186.0" layoutY="160.0" prefWidth="200.0" />
-      <Separator layoutX="186.0" layoutY="252.0" prefWidth="200.0" />
-      <Separator layoutX="186.0" layoutY="337.0" prefWidth="200.0" />
-      <Label layoutX="232.0" layoutY="175.0" text="Add Connection">
+      <Button layoutX="251.0" layoutY="63.0" mnemonicParsing="false" onAction="#viewProfile" text="View Profile" />
+      <Button layoutX="244.0" layoutY="103.0" mnemonicParsing="false" onAction="#deletePerson" text="Delete Person" />
+      <Separator layoutX="201.0" layoutY="160.0" prefWidth="200.0" />
+      <Separator layoutX="207.0" layoutY="251.0" prefWidth="200.0" />
+      <Separator layoutX="200.0" layoutY="337.0" prefWidth="200.0" />
+      <Label layoutX="250.0" layoutY="170.0" text="Add Connection">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
       <TextField id="txt_addConnectionName" fx:id="txt_addConnectionName" layoutX="34.0" layoutY="205.0" promptText="Person Name" />
       <ComboBox fx:id="connectionTypeComboBox" layoutX="252.0" layoutY="205.0" prefWidth="150.0" promptText="Select" />
       <Button layoutX="432.0" layoutY="205.0" mnemonicParsing="false" onAction="#addConnection" text="Add Connection" />
-      <Label layoutX="237.0" layoutY="24.0" text="Actions Menu">
+      <Label layoutX="251.0" layoutY="27.0" text="Actions Menu">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="226.0" layoutY="265.0" text="Check Connection">
+      <Label layoutX="237.0" layoutY="264.0" text="Check Connection">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
       <TextField fx:id="checkConnection_TextField" layoutX="113.0" layoutY="295.0" promptText="Enter person's name" />
       <Button layoutX="335.0" layoutY="295.0" mnemonicParsing="false" onAction="#checkConnection" text="Check Connection" />
-      <Button layoutX="252.0" layoutY="349.0" mnemonicParsing="false" text="Main Menu" />
+      <Button layoutX="252.0" layoutY="349.0" mnemonicParsing="false" onAction="#goToMainMenu" text="Main Menu" />
    </children>
 </AnchorPane>
