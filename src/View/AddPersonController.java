@@ -1,3 +1,7 @@
+/**
+ * @author John Michael Tubera
+ */
+
 package View;
 
 import Model.AdultUserModel;

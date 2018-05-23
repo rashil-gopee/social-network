@@ -1,3 +1,7 @@
+/**
+ * @author Isswarraj Gopee
+ */
+
 package Exception;
 
 public class NotToBeColleaguesException extends Exception {

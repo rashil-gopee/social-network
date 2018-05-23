@@ -1,3 +1,7 @@
+/**
+ * @author John Michael Tubera
+ */
+
 package View;
 
 import Controller.Driver;
@@ -62,4 +66,10 @@ public class MainMenuController {
         mainWindow.hide();
         System.exit(1);
     }
+
+    public void printAllUsers(ActionEvent event){
+        Driver driver = new Driver();
+        driver.printUsers();
+    }
+
 }

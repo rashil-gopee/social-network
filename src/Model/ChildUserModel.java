@@ -1,3 +1,7 @@
+/**
+ * @author Isswarraj Gopee
+ */
+
 package Model;
 
 import Constant.ApplicationConstant;
@@ -14,7 +18,7 @@ public class ChildUserModel extends UserModel implements iNotYoungChild {
     public ChildUserModel(String userName, int age, String status, String photo, char gender, String state, Set<String> parents) throws Exception {
         super(userName, age, status, photo, gender, state);
         if (parents.size() != 2) {
-            throw new NoParentException("Child should have only 2 parents.");
+            throw new NoParentException("Child should have 2 parents.");
         }
         for (String parent : parents) {
             this.getConnections().add(new ConnectionModel(parent, ApplicationConstant.PARENT));

@@ -1,3 +1,7 @@
+/**
+ * @author Isswarraj Gopee
+ */
+
 package Controller;
 
 import Constant.ApplicationConstant;
@@ -370,12 +374,13 @@ public class Driver {
     }
 
     public ArrayList<String> getShorterstRelationPathway(UserModel userModel, String targetName) {
+
         ArrayList<String> relationPathway = new ArrayList<>();
 
         ArrayList<String> traversedPeople = new ArrayList<>();
 
         for (ConnectionModel connectionModel : userModel.getConnections()) {
-
+            getUser(connectionModel.getConnectionName());
         }
 
         return relationPathway;

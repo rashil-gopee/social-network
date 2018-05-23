@@ -1,3 +1,7 @@
+/**
+ * @author Isswarraj Gopee
+ */
+
 package Model;
 
 import Constant.ApplicationConstant;
@@ -10,6 +14,9 @@ import Exception.NoParentException;
 public class YoungChildUserModel extends UserModel {
     public YoungChildUserModel(String userName, int age, String status, String photo, char gender, String state, Set<String> parents) throws Exception{
         super(userName, age, status, photo, gender, state);
+        if (parents.size() != 2) {
+            throw new NoParentException("Young child should have 2 parents.");
+        }
         for (String parent : parents){
             this.getConnections().add(new ConnectionModel(parent, ApplicationConstant.PARENT));
         }

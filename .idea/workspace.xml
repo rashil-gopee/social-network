@@ -2,13 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/design/DesignExplanations.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design/classdiagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design/classdiagramwithdependencies.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitTest/DriverTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitTest/ExceptionsUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UnitTest/UsersTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddPerson.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddPerson.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/NoAvailableException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/NoAvailableException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/NoParentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/NoParentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/NoSuchAgeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/NoSuchAgeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/NotToBeClassmatesException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/NotToBeClassmatesException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/NotToBeColleaguesException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/NotToBeColleaguesException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/NotToBeFriendsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/NotToBeFriendsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/NotTobeCoupledException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/NotTobeCoupledException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/TooYoungException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/TooYoungException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/iNotYoungChild.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/iNotYoungChild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ChildUserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ChildUserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/YoungChildUserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/YoungChildUserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest/AdultClassTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddPersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddPersonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/PersonMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PersonMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ViewProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ViewProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PersonMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PersonMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/ViewProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ViewProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classdiagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classdiagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classdiagram.uml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -113,105 +133,127 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ViewProfile.fxml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/ViewProfile.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="41" column="90" lean-forward="true" selection-start-line="41" selection-start-column="90" selection-end-line="41" selection-end-column="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ViewProfileController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/ViewProfileController.java">
+      <file leaf-file-name="UserModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/UserModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+            <state relative-caret-position="689">
+              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="74" />
               <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdultClassTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UnitTest/AdultClassTest.java">
+      <file leaf-file-name="ChildUserModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/ChildUserModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="people" pinned="false" current-in-tab="false">
-        <entry file="das://4f70a47f-4136-4400-ac73-6d3133f7676d/schema/main/table/people">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonMenuController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/PersonMenuController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="153" column="5" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
+            <state relative-caret-position="92">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#addConnection#0;class#PersonMenuController#0" />
-                <element signature="method#checkConnection#0;class#PersonMenuController#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddPerson.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/AddPerson.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenu.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/MainMenu.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonMenu.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/PersonMenu.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenuController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/MainMenuController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="44" selection-end-column="57" />
-              <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddPersonController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/AddPersonController.java">
+      <file leaf-file-name="ConnectionModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/ConnectionModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="160" column="5" lean-forward="true" selection-start-line="156" selection-start-column="4" selection-end-line="160" selection-end-column="5" />
+            <state relative-caret-position="92">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="YoungChildUserModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/YoungChildUserModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdultUserModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/AdultUserModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1081">
+              <caret line="47" column="75" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="75" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotToBeColleaguesException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Exception/NotToBeColleaguesException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#134#135#0" expanded="true" />
+                <element signature="e#164#165#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotTobeCoupledException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Exception/NotTobeCoupledException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#128#129#0" expanded="true" />
+                <element signature="e#158#159#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotToBeFriendsException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Exception/NotToBeFriendsException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#128#129#0" expanded="true" />
+                <element signature="e#158#159#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TooYoungException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Exception/TooYoungException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="iNotYoungChild.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Interface/iNotYoungChild.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -222,8 +264,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -248,15 +290,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/View/AddFriend.fxml" />
-        <option value="$PROJECT_DIR$/src/test.fxml" />
-        <option value="$PROJECT_DIR$/src/sample.fxml" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Interface/iAddClassMate.java" />
         <option value="$PROJECT_DIR$/src/Model/DependentUserModel.java" />
         <option value="$PROJECT_DIR$/src/jUnitTest/AdultClassTest.java" />
-        <option value="$PROJECT_DIR$/src/UnitTest/AdultClassTest.java" />
         <option value="$PROJECT_DIR$/src/File/people.txt" />
         <option value="$PROJECT_DIR$/src/File/relations.txt" />
         <option value="$PROJECT_DIR$/src/Constant/ApplicationConstant.java" />
@@ -268,17 +305,7 @@
         <option value="$PROJECT_DIR$/src/View/MainView.java" />
         <option value="$PROJECT_DIR$/src/View/AddFriend.java" />
         <option value="$PROJECT_DIR$/src/Driver.java" />
-        <option value="$PROJECT_DIR$/src/Exception/NoParentException.java" />
-        <option value="$PROJECT_DIR$/src/Exception/NoAvailableException.java" />
-        <option value="$PROJECT_DIR$/src/Exception/NotToBeClassmatesException.java" />
-        <option value="$PROJECT_DIR$/src/Exception/NotToBeColleaguesException.java" />
-        <option value="$PROJECT_DIR$/src/Exception/NotTobeCoupledException.java" />
-        <option value="$PROJECT_DIR$/src/Exception/NotToBeFriendsException.java" />
-        <option value="$PROJECT_DIR$/src/Exception/TooYoungException.java" />
-        <option value="$PROJECT_DIR$/src/Interface/iNotYoungChild.java" />
-        <option value="$PROJECT_DIR$/src/Exception/NoSuchAgeException.java" />
         <option value="$PROJECT_DIR$/src/View/PersonProfileView.fxml" />
-        <option value="$PROJECT_DIR$/src/View/AddPersonController.java" />
         <option value="$PROJECT_DIR$/src/Mininet.java" />
         <option value="$PROJECT_DIR$/src/View/SelectPersonView.fxml" />
         <option value="$PROJECT_DIR$/src/Helper/Helper.java" />
@@ -288,17 +315,32 @@
         <option value="$PROJECT_DIR$/src/View/MainView.fxml" />
         <option value="$PROJECT_DIR$/src/View/PersonMenuView.fxml" />
         <option value="$PROJECT_DIR$/src/Model/UserModel.java" />
-        <option value="$PROJECT_DIR$/src/Model/YoungChildUserModel.java" />
         <option value="$PROJECT_DIR$/src/Model/AdultUserModel.java" />
-        <option value="$PROJECT_DIR$/src/Model/ChildUserModel.java" />
         <option value="$PROJECT_DIR$/src/View/PersonProfile.fxml" />
-        <option value="$PROJECT_DIR$/src/Controller/Driver.java" />
-        <option value="$PROJECT_DIR$/src/View/PersonMenuController.java" />
-        <option value="$PROJECT_DIR$/src/View/ViewProfileController.java" />
         <option value="$PROJECT_DIR$/src/View/AddPerson.fxml" />
-        <option value="$PROJECT_DIR$/src/View/MainMenu.fxml" />
         <option value="$PROJECT_DIR$/src/View/PersonMenu.fxml" />
         <option value="$PROJECT_DIR$/src/View/ViewProfile.fxml" />
+        <option value="$PROJECT_DIR$/src/UnitTest/AdultClassTest.java" />
+        <option value="$PROJECT_DIR$/src/UnitTest/ExceptionsUnitTest.java" />
+        <option value="$PROJECT_DIR$/src/UnitTest/UsersTest.java" />
+        <option value="$PROJECT_DIR$/src/UnitTest/DriverTest.java" />
+        <option value="$PROJECT_DIR$/src/View/MainMenu.fxml" />
+        <option value="$PROJECT_DIR$/src/View/AddPersonController.java" />
+        <option value="$PROJECT_DIR$/src/View/MainMenuController.java" />
+        <option value="$PROJECT_DIR$/src/View/PersonMenuController.java" />
+        <option value="$PROJECT_DIR$/src/View/ViewProfileController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Driver.java" />
+        <option value="$PROJECT_DIR$/src/Exception/NoAvailableException.java" />
+        <option value="$PROJECT_DIR$/src/Exception/NoParentException.java" />
+        <option value="$PROJECT_DIR$/src/Exception/NoSuchAgeException.java" />
+        <option value="$PROJECT_DIR$/src/Exception/NotToBeClassmatesException.java" />
+        <option value="$PROJECT_DIR$/src/Exception/NotToBeColleaguesException.java" />
+        <option value="$PROJECT_DIR$/src/Exception/NotTobeCoupledException.java" />
+        <option value="$PROJECT_DIR$/src/Exception/NotToBeFriendsException.java" />
+        <option value="$PROJECT_DIR$/src/Exception/TooYoungException.java" />
+        <option value="$PROJECT_DIR$/src/Interface/iNotYoungChild.java" />
+        <option value="$PROJECT_DIR$/src/Model/ChildUserModel.java" />
+        <option value="$PROJECT_DIR$/src/Model/YoungChildUserModel.java" />
       </list>
     </option>
   </component>
@@ -340,6 +382,36 @@
               <item name="social-network" type="b2602c69:ProjectViewProjectNode" />
               <item name="social-network" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="social-network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social-network" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="social-network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social-network" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="social-network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social-network" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Interface" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="social-network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social-network" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="social-network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social-network" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UnitTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -369,7 +441,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/design" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -399,7 +471,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AdultClassTest.testAdd">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -419,7 +491,7 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="AdultClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DriverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="social-network" />
       <extension name="coverage">
         <pattern>
@@ -430,7 +502,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="UnitTest" />
-      <option name="MAIN_CLASS_NAME" value="UnitTest.AdultClassTest" />
+      <option name="MAIN_CLASS_NAME" value="UnitTest.DriverTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -442,7 +514,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="AdultClassTest.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExceptionsUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="social-network" />
       <extension name="coverage">
         <pattern>
@@ -453,9 +525,78 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="UnitTest" />
-      <option name="MAIN_CLASS_NAME" value="UnitTest.AdultClassTest" />
-      <option name="METHOD_NAME" value="testAdd" />
+      <option name="MAIN_CLASS_NAME" value="UnitTest.ExceptionsUnitTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ExceptionsUnitTest.init" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="social-network" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="UnitTest.ExceptionsUnitTest" />
+      <option name="METHOD_NAME" value="init" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ExceptionsUnitTest.testNoParentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="social-network" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="UnitTest.ExceptionsUnitTest" />
+      <option name="METHOD_NAME" value="testNoParentException" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="UsersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="social-network" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="UnitTest.UsersTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -531,13 +672,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.AdultClassTest" />
-      <item itemvalue="JUnit.AdultClassTest.testAdd" />
+      <item itemvalue="JUnit.ExceptionsUnitTest.init" />
+      <item itemvalue="JUnit.ExceptionsUnitTest.testNoParentException" />
+      <item itemvalue="JUnit.ExceptionsUnitTest" />
+      <item itemvalue="JUnit.UsersTest" />
+      <item itemvalue="JUnit.DriverTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AdultClassTest.testAdd" />
-        <item itemvalue="JUnit.AdultClassTest" />
+        <item itemvalue="JUnit.DriverTest" />
+        <item itemvalue="JUnit.UsersTest" />
+        <item itemvalue="JUnit.ExceptionsUnitTest" />
+        <item itemvalue="JUnit.ExceptionsUnitTest.testNoParentException" />
+        <item itemvalue="JUnit.ExceptionsUnitTest.init" />
       </list>
     </recent_temporary>
   </component>
@@ -563,20 +710,44 @@
       <workItem from="1526947406757" duration="26614000" />
       <workItem from="1527022946942" duration="1799000" />
       <workItem from="1527063754845" duration="11362000" />
-      <workItem from="1527075443556" duration="14108000" />
+      <workItem from="1527075443556" duration="20138000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AdultClassTest - 2018.05.17 at 23h 04m 08s.xml">
-      <configuration name="AdultClassTest" configurationId="JUnit" />
+    <history-entry file="AdultClassTest_testAdd - 2018.05.24 at 01h 58m 18s.xml">
+      <configuration name="AdultClassTest.testAdd" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdultClassTest - 2018.05.17 at 23h 06m 17s.xml">
-      <configuration name="AdultClassTest" configurationId="JUnit" />
+    <history-entry file="AdultClassTest_init - 2018.05.24 at 02h 18m 38s.xml">
+      <configuration name="AdultClassTest.init" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExceptionsUnitTest_init - 2018.05.24 at 02h 28m 27s.xml">
+      <configuration name="ExceptionsUnitTest.init" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExceptionsUnitTest_testNoParentException - 2018.05.24 at 02h 48m 08s.xml">
+      <configuration name="ExceptionsUnitTest.testNoParentException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExceptionsUnitTest - 2018.05.24 at 02h 53m 39s.xml">
+      <configuration name="ExceptionsUnitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExceptionsUnitTest - 2018.05.24 at 02h 54m 26s.xml">
+      <configuration name="ExceptionsUnitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExceptionsUnitTest - 2018.05.24 at 03h 00m 29s.xml">
+      <configuration name="ExceptionsUnitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UsersTest - 2018.05.24 at 03h 00m 35s.xml">
+      <configuration name="UsersTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DriverTest - 2018.05.24 at 03h 12m 25s.xml">
+      <configuration name="DriverTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DriverTest - 2018.05.24 at 03h 50m 09s.xml">
+      <configuration name="DriverTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109592000" />
+    <option name="totallyTimeSpent" value="115622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
@@ -584,7 +755,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="9" />
       <window_info anchor="bottom" id="TODO" order="16" />
-      <window_info id="simpleUML" order="0" />
+      <window_info id="simpleUML" order="0" weight="0.3296875" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.42720512" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="5" />
@@ -596,7 +767,6 @@
       <window_info anchor="bottom" id="Version Control" order="15" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info id="Capture Tool" order="3" />
-      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32943678" />
       <window_info id="Designer" order="1" />
       <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.6703755" visible="true" weight="0.18697916" />
       <window_info anchor="right" id="Database" order="8" weight="0.328125" />
@@ -610,6 +780,7 @@
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32943678" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32837406" />
       <window_info anchor="bottom" id="Changes" order="13" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
@@ -635,24 +806,24 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/Driver.java</url>
-          <line>402</line>
+          <line>407</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/Driver.java</url>
-          <line>102</line>
+          <line>106</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/Driver.java</url>
-          <line>101</line>
+          <line>105</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/Driver.java</url>
-          <line>67</line>
+          <line>71</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -665,20 +836,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/ConnectionModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ChildUserModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Constant/ApplicationConstant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -734,20 +891,6 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/Model/DependentUserModel.java" />
-    <entry file="file://$PROJECT_DIR$/src/Model/ConnectionModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constant/ApplicationConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/relations.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -783,66 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/NoParentException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="23" />
-          <folding>
-            <element signature="e#115#116#0" expanded="true" />
-            <element signature="e#138#139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/NoAvailableException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/NotToBeClassmatesException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/NotToBeColleaguesException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/NotTobeCoupledException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interface/iNotYoungChild.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/NoSuchAgeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/NotToBeFriendsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/SelectPersonController.java" />
     <entry file="file://$PROJECT_DIR$/src/View/AddFriend.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -875,49 +958,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/UserModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="108" column="83" selection-start-line="108" selection-start-column="83" selection-end-line="108" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/YoungChildUserModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/TooYoungException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/classdiagram.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/AdultUserModel.java">
+    <entry file="file://$PROJECT_DIR$/src/View/PersonProfile.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://4f70a47f-4136-4400-ac73-6d3133f7676d/schema/main/table/people">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/AddPerson.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/PersonMenu.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UnitTest/ExceptionsUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+        <state relative-caret-position="623">
+          <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ChildUserModel.java">
+    <entry file="file://$PROJECT_DIR$/src/UnitTest/UsersTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="19" column="77" lean-forward="true" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
+        <state relative-caret-position="186">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -928,26 +1012,55 @@
           <ID>JAVA</ID>
           <OriginalElement />
           <nodes>
-            <node x="" y="">Exception.NotToBeClassmatesException</node>
-            <node x="" y="">Model.ChildUserModel</node>
-            <node x="" y="">Exception.NotTobeCoupledException</node>
-            <node x="" y="">Exception.NotToBeFriendsException</node>
-            <node x="" y="">Controller.Driver</node>
-            <node x="" y="">Model.AdultUserModel</node>
-            <node x="" y="">Model.YoungChildUserModel</node>
-            <node x="" y="">Exception.NotToBeColleaguesException</node>
-            <node x="" y="">Model.UserModel</node>
-            <node x="" y="">Exception.NoParentException</node>
-            <node x="" y="">Exception.TooYoungException</node>
-            <node x="" y="">Exception.NoSuchAgeException</node>
-            <node x="" y="">Exception.NoAvailableException</node>
-            <node x="" y="">Interface.iNotYoungChild</node>
-            <node x="" y="">Model.ConnectionModel</node>
+            <node x="686.0" y="550.0">Exception.NotToBeClassmatesException</node>
+            <node x="549.0" y="355.0">Model.ChildUserModel</node>
+            <node x="0.0" y="1043.0">Exception.NotTobeCoupledException</node>
+            <node x="236.0" y="1043.0">Exception.NotToBeFriendsException</node>
+            <node x="0.0" y="550.0">Controller.Driver</node>
+            <node x="275.0" y="300.0">Model.AdultUserModel</node>
+            <node x="0.0" y="343.5">Model.YoungChildUserModel</node>
+            <node x="936.0" y="550.0">Exception.NotToBeColleaguesException</node>
+            <node x="199.5" y="0.0">Model.UserModel</node>
+            <node x="0.0" y="1117.0">Exception.NoParentException</node>
+            <node x="882.0" y="1043.0">Exception.TooYoungException</node>
+            <node x="675.0" y="1043.0">Exception.NoSuchAgeException</node>
+            <node x="549.0" y="88.5">Interface.iNotYoungChild</node>
+            <node x="465.0" y="1043.0">Exception.NoAvailableException</node>
+            <node x="464.0" y="550.0">Model.ConnectionModel</node>
           </nodes>
           <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.7624356775300172" x="-85.21934758155231" y="294.7806524184477" />
-          <SelectedNodes />
+          <edges>
+            <edge source="Model.YoungChildUserModel" target="Model.UserModel">
+              <point x="0.0" y="-59.0" />
+              <point x="127.5" y="280.0" />
+              <point x="245.83333333333331" y="280.0" />
+              <point x="-92.66666666666669" y="125.0" />
+            </edge>
+            <edge source="Model.ChildUserModel" target="Interface.iNotYoungChild">
+              <point x="58.75" y="-47.5" />
+              <point x="58.75" y="36.5" />
+            </edge>
+            <edge source="Model.ChildUserModel" target="Model.UserModel">
+              <point x="-58.75" y="-47.5" />
+              <point x="607.75" y="270.0" />
+              <point x="431.1666666666667" y="270.0" />
+              <point x="92.66666666666669" y="125.0" />
+            </edge>
+            <edge source="Model.AdultUserModel" target="Interface.iNotYoungChild">
+              <point x="63.5" y="-102.5" />
+              <point x="465.5" y="280.0" />
+              <point x="607.75" y="280.0" />
+              <point x="-58.75" y="36.5" />
+            </edge>
+            <edge source="Model.AdultUserModel" target="Model.UserModel">
+              <point x="-63.5" y="-102.5" />
+              <point x="0.0" y="125.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.3628879037365421" x="1319.6431064572425" y="769.5" />
+          <SelectedNodes>
+            <node>Interface.iNotYoungChild</node>
+          </SelectedNodes>
           <Categories>
             <Category>Fields</Category>
             <Category>Methods</Category>
@@ -958,15 +1071,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/PersonProfile.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/UnitTest/DriverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ViewProfile.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="41" column="90" selection-start-line="41" selection-start-column="90" selection-end-line="41" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/MainMenu.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/AddPersonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/MainMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/PersonMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#addConnection#0;class#PersonMenuController#0" />
+            <element signature="method#checkConnection#0;class#PersonMenuController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ViewProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constant/ApplicationConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="30" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="473" lean-forward="true" selection-start-line="473" selection-end-line="473" />
+        <state>
+          <caret selection-end-line="2" selection-end-column="3" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#loadUsersFromDb#0;class#Driver#0" />
             <element signature="method#loadUsersFromFile#0;class#Driver#0" />
@@ -977,87 +1167,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4f70a47f-4136-4400-ac73-6d3133f7676d/schema/main/table/people">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+    <entry file="file://$PROJECT_DIR$/src/Exception/NoAvailableException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/NoParentException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#115#116#0" expanded="true" />
+            <element signature="e#145#146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/NoSuchAgeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/NotToBeClassmatesException.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state>
-          <filtering enabled="true" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#134#135#0" expanded="true" />
+            <element signature="e#164#165#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainMenuController.java">
+    <entry file="file://$PROJECT_DIR$/src/Exception/NotToBeColleaguesException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="44" selection-end-column="57" />
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#134#135#0" expanded="true" />
+            <element signature="e#164#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/NotTobeCoupledException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#128#129#0" expanded="true" />
+            <element signature="e#158#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/NotToBeFriendsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#128#129#0" expanded="true" />
+            <element signature="e#158#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/TooYoungException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interface/iNotYoungChild.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/AdultUserModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1081">
+          <caret line="47" column="75" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="75" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/PersonMenuController.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/ChildUserModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="153" column="5" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#addConnection#0;class#PersonMenuController#0" />
-            <element signature="method#checkConnection#0;class#PersonMenuController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/AddPersonController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="160" column="5" lean-forward="true" selection-start-line="156" selection-start-column="4" selection-end-line="160" selection-end-column="5" />
-          <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ViewProfileController.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/ConnectionModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+        <state relative-caret-position="92">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/UserModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="74" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UnitTest/AdultClassTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/YoungChildUserModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/AddPerson.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainMenu.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/PersonMenu.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ViewProfile.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="41" column="90" lean-forward="true" selection-start-line="41" selection-start-column="90" selection-end-line="41" selection-end-column="90" />
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

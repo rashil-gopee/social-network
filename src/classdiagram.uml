@@ -3,222 +3,224 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="1061.5" y="517.5">Exception.NotToBeClassmatesException</node>
-    <node x="195.5" y="691.0">Model.ChildUserModel</node>
-    <node x="801.5" y="724.0">Exception.NotTobeCoupledException</node>
-    <node x="468.0" y="517.5">Exception.NotToBeFriendsException</node>
-    <node x="1070.038503213958" y="1141.0">Controller.Driver</node>
-    <node x="1089.038503213958" y="866.0">Model.AdultUserModel</node>
-    <node x="181.0" y="473.0">Model.YoungChildUserModel</node>
-    <node x="1236.5" y="724.0">Exception.NotToBeColleaguesException</node>
-    <node x="1265.0" y="153.0">Model.UserModel</node>
-    <node x="0.0" y="263.5">Exception.NoParentException</node>
-    <node x="887.5" y="517.5">Exception.TooYoungException</node>
-    <node x="1422.175" y="22.0">Exception.NoSuchAgeException</node>
-    <node x="616.5" y="724.0">Exception.NoAvailableException</node>
-    <node x="1286.5" y="495.5">Interface.iNotYoungChild</node>
-    <node x="1225.175" y="0.0">Model.ConnectionModel</node>
+    <node x="1152.4234802571166" y="527.5">Exception.NotToBeClassmatesException</node>
+    <node x="1597.117796143251" y="701.0">Model.ChildUserModel</node>
+    <node x="326.4234802571166" y="734.0">Exception.NotTobeCoupledException</node>
+    <node x="1377.4234802571166" y="527.5">Exception.NotToBeFriendsException</node>
+    <node x="456.3611111111111" y="1151.0">Controller.Driver</node>
+    <node x="602.3611111111111" y="876.0">Model.AdultUserModel</node>
+    <node x="1593.4234802571166" y="483.0">Model.YoungChildUserModel</node>
+    <node x="101.42348025711658" y="734.0">Exception.NotToBeColleaguesException</node>
+    <node x="700.1177961432511" y="163.0">Model.UserModel</node>
+    <node x="1880.4234802571164" y="273.5">Exception.NoParentException</node>
+    <node x="978.4234802571166" y="527.5">Exception.TooYoungException</node>
+    <node x="658.9427961432511" y="22.0">Exception.NoSuchAgeException</node>
+    <node x="723.4234802571166" y="505.5">Interface.iNotYoungChild</node>
+    <node x="537.4234802571166" y="734.0">Exception.NoAvailableException</node>
+    <node x="840.9427961432511" y="0.0">Model.ConnectionModel</node>
   </nodes>
   <notes />
   <edges>
     <edge source="Model.ChildUserModel" target="Model.ConnectionModel">
-      <point x="-58.75" y="-47.5" />
-      <point x="254.25" y="651.0" />
-      <point x="170.5" y="651.0" />
-      <point x="170.5" y="113.0" />
-      <point x="1251.725" y="113.0" />
-      <point x="-61.950000000000045" y="36.5" />
+      <point x="82.25" y="-47.5" />
+      <point x="1796.867796143251" y="671.0" />
+      <point x="1869.9234802571166" y="671.0" />
+      <point x="1869.9234802571166" y="113.0" />
+      <point x="1009.092796143251" y="113.0" />
+      <point x="79.64999999999986" y="36.5" />
     </edge>
     <edge source="Controller.Driver" target="Model.AdultUserModel">
-      <point x="-46.55555555555566" y="-224.0" />
-      <point x="1232.9829476584023" y="1091.0" />
-      <point x="1152.538503213958" y="1091.0" />
+      <point x="0.0" y="-224.0" />
       <point x="-63.5" y="102.5" />
     </edge>
     <edge source="Model.YoungChildUserModel" target="Model.UserModel">
-      <point x="102.0" y="-59.0" />
-      <point x="410.5" y="433.0" />
-      <point x="1311.3333333333335" y="433.0" />
-      <point x="-92.66666666666663" y="125.0" />
+      <point x="-51.0" y="-59.0" />
+      <point x="1669.9234802571166" y="433.0" />
+      <point x="962.6733516988068" y="433.0" />
+      <point x="123.55555555555566" y="125.0" />
     </edge>
     <edge source="Model.ChildUserModel" target="Model.YoungChildUserModel">
-      <point x="-35.25" y="-47.5" />
-      <point x="277.75" y="641.0" />
-      <point x="244.75" y="641.0" />
-      <point x="-63.75" y="59.0" />
+      <point x="35.25" y="-47.5" />
+      <point x="1749.867796143251" y="651.0" />
+      <point x="1784.6734802571166" y="651.0" />
+      <point x="63.75" y="59.0" />
     </edge>
     <edge source="Controller.Driver" target="Model.ChildUserModel">
-      <point x="-139.66666666666652" y="-224.0" />
-      <point x="1139.8718365472914" y="1111.0" />
-      <point x="254.25" y="1111.0" />
-      <point x="-58.75" y="47.5" />
-    </edge>
-    <edge source="Model.UserModel" target="Model.ConnectionModel">
-      <point x="34.75" y="-125.0" />
-      <point x="1438.75" y="123.0" />
-      <point x="1340.225" y="123.0" />
-      <point x="26.549999999999955" y="36.5" />
-    </edge>
-    <edge source="Model.YoungChildUserModel" target="Model.ConnectionModel">
-      <point x="-51.0" y="-59.0" />
-      <point x="257.5" y="453.0" />
-      <point x="263.1831037649223" y="453.0" />
-      <point x="263.1831037649223" y="123.0" />
-      <point x="1269.425" y="123.0" />
-      <point x="-44.25" y="36.5" />
-    </edge>
-    <edge source="Model.ChildUserModel" target="Exception.NotToBeClassmatesException">
-      <point x="82.25" y="-47.5" />
-      <point x="395.25" y="661.0" />
-      <point x="1112.75" y="661.0" />
-      <point x="-51.25" y="14.5" />
-    </edge>
-    <edge source="Model.ChildUserModel" target="Interface.iNotYoungChild">
-      <point x="105.75" y="-47.5" />
-      <point x="418.75" y="671.0" />
-      <point x="1345.25" y="671.0" />
-      <point x="-58.75" y="36.5" />
-    </edge>
-    <edge source="Controller.Driver" target="Model.UserModel">
-      <point x="46.55555555555566" y="-224.0" />
-      <point x="1326.0940587695136" y="1091.0" />
-      <point x="1598.2371166207527" y="1091.0" />
-      <point x="1598.2371166207527" y="433.0" />
-      <point x="1496.6666666666665" y="433.0" />
-      <point x="92.66666666666663" y="125.0" />
-    </edge>
-    <edge source="Model.ChildUserModel" target="Exception.NotToBeFriendsException">
-      <point x="35.25" y="-47.5" />
-      <point x="348.25" y="641.0" />
-      <point x="514.0" y="641.0" />
-      <point x="-46.0" y="14.5" />
-    </edge>
-    <edge source="Controller.Driver" target="Model.ConnectionModel">
-      <point x="186.22222222222217" y="-224.0" />
-      <point x="1465.76072543618" y="1121.0" />
-      <point x="1631.2371166207527" y="1121.0" />
-      <point x="1631.2371166207527" y="93.0" />
-      <point x="1393.3249999999998" y="93.0" />
-      <point x="79.64999999999998" y="36.5" />
-    </edge>
-    <edge source="Model.ChildUserModel" target="Exception.TooYoungException">
-      <point x="58.75" y="-47.5" />
-      <point x="371.75" y="651.0" />
-      <point x="926.0" y="651.0" />
-      <point x="-38.5" y="14.5" />
-    </edge>
-    <edge source="Model.AdultUserModel" target="Exception.NotToBeClassmatesException">
-      <point x="0.0" y="-102.5" />
-      <point x="51.25" y="14.5" />
-    </edge>
-    <edge source="Model.AdultUserModel" target="Model.ChildUserModel">
-      <point x="-115.4545454545455" y="-102.5" />
-      <point x="1100.5839577594124" y="846.0" />
-      <point x="371.75" y="846.0" />
+      <point x="139.66666666666674" y="-224.0" />
+      <point x="805.5277777777778" y="1121.0" />
+      <point x="1773.367796143251" y="1121.0" />
       <point x="58.75" y="47.5" />
     </edge>
+    <edge source="Model.UserModel" target="Model.ConnectionModel">
+      <point x="104.25" y="-125.0" />
+      <point x="943.3677961432511" y="143.0" />
+      <point x="938.292796143251" y="143.0" />
+      <point x="8.849999999999909" y="36.5" />
+    </edge>
+    <edge source="Model.YoungChildUserModel" target="Model.ConnectionModel">
+      <point x="0.0" y="-59.0" />
+      <point x="1720.9234802571166" y="463.0" />
+      <point x="1739.117796143251" y="463.0" />
+      <point x="1739.117796143251" y="143.0" />
+      <point x="955.9927961432511" y="143.0" />
+      <point x="26.549999999999955" y="36.5" />
+    </edge>
+    <edge source="Model.ChildUserModel" target="Exception.NotToBeClassmatesException">
+      <point x="-58.75" y="-47.5" />
+      <point x="1655.867796143251" y="651.0" />
+      <point x="1306.1734802571166" y="651.0" />
+      <point x="51.25" y="14.5" />
+    </edge>
+    <edge source="Model.ChildUserModel" target="Interface.iNotYoungChild">
+      <point x="-105.75" y="-47.5" />
+      <point x="1608.867796143251" y="671.0" />
+      <point x="899.6734802571166" y="671.0" />
+      <point x="58.75" y="36.5" />
+    </edge>
+    <edge source="Controller.Driver" target="Model.UserModel">
+      <point x="-46.55555555555543" y="-224.0" />
+      <point x="619.3055555555557" y="1101.0" />
+      <point x="47.0" y="1101.0" />
+      <point x="47.0" y="443.0" />
+      <point x="746.4511294765844" y="443.0" />
+      <point x="-92.66666666666674" y="125.0" />
+    </edge>
+    <edge source="Model.ChildUserModel" target="Exception.NotToBeFriendsException">
+      <point x="-35.25" y="-47.5" />
+      <point x="1679.367796143251" y="641.0" />
+      <point x="1515.4234802571166" y="641.0" />
+      <point x="46.0" y="14.5" />
+    </edge>
+    <edge source="Controller.Driver" target="Model.ConnectionModel">
+      <point x="-186.22222222222217" y="-224.0" />
+      <point x="479.6388888888889" y="1131.0" />
+      <point x="14.0" y="1131.0" />
+      <point x="14.0" y="103.0" />
+      <point x="849.792796143251" y="103.0" />
+      <point x="-79.65000000000009" y="36.5" />
+    </edge>
+    <edge source="Model.ChildUserModel" target="Exception.TooYoungException">
+      <point x="-82.25" y="-47.5" />
+      <point x="1632.367796143251" y="661.0" />
+      <point x="1093.9234802571166" y="661.0" />
+      <point x="38.5" y="14.5" />
+    </edge>
+    <edge source="Model.AdultUserModel" target="Exception.NotToBeClassmatesException">
+      <point x="69.27272727272725" y="-102.5" />
+      <point x="798.6338383838383" y="836.0" />
+      <point x="1203.6734802571166" y="836.0" />
+      <point x="-51.25" y="14.5" />
+    </edge>
+    <edge source="Model.AdultUserModel" target="Model.ChildUserModel">
+      <point x="115.4545454545455" y="-102.5" />
+      <point x="844.8156565656566" y="856.0" />
+      <point x="1655.867796143251" y="856.0" />
+      <point x="-58.75" y="47.5" />
+    </edge>
     <edge source="Controller.Driver" target="Model.YoungChildUserModel">
-      <point x="-93.11111111111109" y="-224.0" />
-      <point x="1186.4273921028466" y="1101.0" />
-      <point x="483.625" y="1101.0" />
-      <point x="483.625" y="611.0" />
-      <point x="372.25" y="611.0" />
-      <point x="63.75" y="59.0" />
+      <point x="93.11111111111109" y="-224.0" />
+      <point x="758.9722222222222" y="1111.0" />
+      <point x="1543.992796143251" y="1111.0" />
+      <point x="1543.992796143251" y="681.0" />
+      <point x="1657.1734802571166" y="681.0" />
+      <point x="-63.75" y="59.0" />
     </edge>
     <edge source="Model.ChildUserModel" target="Model.UserModel">
       <point x="11.75" y="-47.5" />
-      <point x="324.75" y="631.0" />
-      <point x="457.5" y="631.0" />
-      <point x="457.5" y="453.0" />
-      <point x="1373.111111111111" y="453.0" />
-      <point x="-30.888888888888914" y="125.0" />
+      <point x="1726.367796143251" y="621.0" />
+      <point x="1582.9234802571166" y="621.0" />
+      <point x="1582.9234802571166" y="453.0" />
+      <point x="900.8955739210289" y="453.0" />
+      <point x="61.77777777777783" y="125.0" />
     </edge>
     <edge source="Model.AdultUserModel" target="Model.ConnectionModel">
-      <point x="115.4545454545455" y="-102.5" />
-      <point x="1331.4930486685034" y="846.0" />
-      <point x="1587.2371166207527" y="846.0" />
-      <point x="1587.2371166207527" y="113.0" />
-      <point x="1357.925" y="113.0" />
-      <point x="44.25" y="36.5" />
+      <point x="-115.4545454545455" y="-102.5" />
+      <point x="613.9065656565656" y="856.0" />
+      <point x="58.0" y="856.0" />
+      <point x="58.0" y="123.0" />
+      <point x="885.1927961432511" y="123.0" />
+      <point x="-44.25" y="36.5" />
     </edge>
     <edge source="Model.ChildUserModel" target="Exception.NoParentException">
-      <point x="-105.75" y="-47.5" />
-      <point x="207.25" y="671.0" />
-      <point x="61.07916437098288" y="671.0" />
-      <point x="61.07916437098288" y="453.0" />
-      <point x="74.5" y="453.0" />
+      <point x="105.75" y="-47.5" />
+      <point x="1820.367796143251" y="681.0" />
+      <point x="1974.2568135904498" y="681.0" />
+      <point x="1974.2568135904498" y="463.0" />
+      <point x="1954.9234802571164" y="463.0" />
       <point x="0.0" y="14.5" />
     </edge>
     <edge source="Model.UserModel" target="Exception.NoSuchAgeException">
-      <point x="104.25" y="-125.0" />
-      <point x="1508.25" y="133.0" />
-      <point x="1503.175" y="133.0" />
+      <point x="-104.25" y="-125.0" />
+      <point x="734.8677961432511" y="93.0" />
+      <point x="739.9427961432511" y="93.0" />
       <point x="0.0" y="14.5" />
     </edge>
     <edge source="Model.AdultUserModel" target="Interface.iNotYoungChild">
-      <point x="46.181818181818244" y="-102.5" />
-      <point x="1262.220321395776" y="816.0" />
-      <point x="1462.75" y="816.0" />
-      <point x="58.75" y="36.5" />
+      <point x="23.09090909090901" y="-102.5" />
+      <point x="752.4520202020201" y="816.0" />
+      <point x="782.1734802571166" y="816.0" />
+      <point x="-58.75" y="36.5" />
     </edge>
     <edge source="Model.AdultUserModel" target="Exception.NoAvailableException">
-      <point x="-69.27272727272725" y="-102.5" />
-      <point x="1146.7657759412305" y="826.0" />
-      <point x="699.0" y="826.0" />
+      <point x="-23.09090909090901" y="-102.5" />
+      <point x="706.2702020202021" y="816.0" />
+      <point x="619.9234802571166" y="816.0" />
       <point x="0.0" y="14.5" />
     </edge>
     <edge source="Model.YoungChildUserModel" target="Exception.NoParentException">
-      <point x="-102.0" y="-59.0" />
-      <point x="206.5" y="453.0" />
-      <point x="124.16666666666663" y="453.0" />
-      <point x="49.66666666666663" y="14.5" />
+      <point x="102.0" y="-59.0" />
+      <point x="1822.9234802571166" y="463.0" />
+      <point x="1905.2568135904498" y="463.0" />
+      <point x="-49.666666666666664" y="14.5" />
     </edge>
     <edge source="Model.AdultUserModel" target="Exception.NotTobeCoupledException">
       <point x="-46.181818181818244" y="-102.5" />
-      <point x="1169.8566850321395" y="816.0" />
-      <point x="897.0" y="816.0" />
+      <point x="683.1792929292928" y="826.0" />
+      <point x="421.9234802571166" y="826.0" />
       <point x="0.0" y="14.5" />
     </edge>
     <edge source="Controller.Driver" target="Exception.NoParentException">
-      <point x="-186.22222222222217" y="-224.0" />
-      <point x="1093.3162809917358" y="1121.0" />
-      <point x="50.07916437098288" y="1121.0" />
-      <point x="50.07916437098288" y="453.0" />
-      <point x="24.83333333333337" y="453.0" />
-      <point x="-49.66666666666663" y="14.5" />
+      <point x="186.22222222222217" y="-224.0" />
+      <point x="852.0833333333333" y="1131.0" />
+      <point x="1985.2568135904498" y="1131.0" />
+      <point x="1985.2568135904498" y="463.0" />
+      <point x="2004.590146923783" y="463.0" />
+      <point x="49.66666666666674" y="14.5" />
     </edge>
     <edge source="Model.AdultUserModel" target="Exception.NotToBeFriendsException">
-      <point x="-92.36363636363649" y="-102.5" />
-      <point x="1123.6748668503215" y="836.0" />
-      <point x="606.0" y="836.0" />
-      <point x="46.0" y="14.5" />
+      <point x="92.36363636363626" y="-102.5" />
+      <point x="821.7247474747473" y="846.0" />
+      <point x="1423.4234802571166" y="846.0" />
+      <point x="-46.0" y="14.5" />
     </edge>
     <edge source="Model.AdultUserModel" target="Exception.TooYoungException">
-      <point x="-23.09090909090901" y="-102.5" />
-      <point x="1192.947594123049" y="806.0" />
-      <point x="1003.0" y="806.0" />
-      <point x="38.5" y="14.5" />
-    </edge>
-    <edge source="Model.AdultUserModel" target="Exception.NotToBeColleaguesException">
-      <point x="23.09090909090901" y="-102.5" />
-      <point x="1239.129412304867" y="806.0" />
-      <point x="1339.0" y="806.0" />
-      <point x="0.0" y="14.5" />
+      <point x="46.181818181818244" y="-102.5" />
+      <point x="775.5429292929293" y="826.0" />
+      <point x="1016.9234802571166" y="826.0" />
+      <point x="-38.5" y="14.5" />
     </edge>
     <edge source="Model.AdultUserModel" target="Model.UserModel">
-      <point x="69.27272727272725" y="-102.5" />
-      <point x="1285.311230486685" y="826.0" />
-      <point x="1532.0" y="826.0" />
-      <point x="1532.0" y="453.0" />
-      <point x="1434.888888888889" y="453.0" />
-      <point x="30.888888888888914" y="125.0" />
+      <point x="-92.36363636363626" y="-102.5" />
+      <point x="636.9974747474748" y="846.0" />
+      <point x="90.92348025711658" y="846.0" />
+      <point x="90.92348025711658" y="453.0" />
+      <point x="777.3400183654733" y="453.0" />
+      <point x="-61.77777777777783" y="125.0" />
+    </edge>
+    <edge source="Model.AdultUserModel" target="Exception.NotToBeColleaguesException">
+      <point x="-69.27272727272725" y="-102.5" />
+      <point x="660.0883838383838" y="836.0" />
+      <point x="203.92348025711658" y="836.0" />
+      <point x="0.0" y="14.5" />
     </edge>
     <edge source="Interface.iNotYoungChild" target="Model.UserModel">
       <point x="0.0" y="-36.5" />
+      <point x="840.9234802571166" y="463.0" />
+      <point x="839.1177961432511" y="463.0" />
       <point x="0.0" y="125.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7624356775300172" x="570.5736782902137" y="563.0" />
+  <settings layout="Hierarchic Group" zoom="0.35612181479179605" x="353.5740470632859" y="933.4613245646593" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
